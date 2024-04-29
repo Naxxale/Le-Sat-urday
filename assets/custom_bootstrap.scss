@@ -1,0 +1,29 @@
+@import "./node_modules/bootstrap/scss/functions";
+
+//override bs variables : color
+$primary: #FCF5EE;
+$secondary: #221A43;
+$ternary: #627750;
+
+@import "./node_modules/bootstrap/scss/variables";
+@import "./node_modules/bootstrap/scss/variables-dark";
+
+
+//override bs map : color
+
+$custom-theme-colors: (
+    primary: $primary,
+    secondary: $secondary,
+    ternary: $ternary,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+
+//override bs variables : Font
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+$font-family-base: "Raleway", sans-serif;
+
+
+
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
