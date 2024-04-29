@@ -1,0 +1,16 @@
+{
+  "name": "le-sat-urday",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scss-compile": "sass custom_bootstrap.scss:index.css --no-source-map --style compressed",
+    "watch-scss": "sass custom_bootstrap.scss:index.css --no-source-map --style compressed --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
