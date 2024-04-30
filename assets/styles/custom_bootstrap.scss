@@ -1,4 +1,4 @@
-@import "./node_modules/bootstrap/scss/functions";
+@import "/node_modules/bootstrap/scss/functions";
 
 // override BS variable
 
@@ -6,8 +6,8 @@ $primary: #FCF5EE;
 $secondary: #221A43;
 $ternary: #627750;
 
-@import "./node_modules/bootstrap/scss/variables";
-@import "./node_modules/bootstrap/scss/variables-dark";
+@import "/node_modules/bootstrap/scss/variables";
+@import "/node_modules/bootstrap/scss/variables-dark";
 
 // override BS variable
 
@@ -24,6 +24,6 @@ $theme-colors: map-merge($theme-colors, $custom-theme-colors);
 
 $font-family-base: "Raleway", sans-serif;
 
-@import "./node_modules/bootstrap/scss/bootstrap.scss";
+@import "/node_modules/bootstrap/scss/bootstrap.scss";
 
 
