@@ -1,4 +1,4 @@
-@import "./node_modules/bootstrap/scss/functions";
+@import "/node_modules/bootstrap/scss/functions";
 
 //override bs variables
 $primary: #FCF5EE;
@@ -23,4 +23,4 @@ $theme-colors: map-merge($theme-colors, $custom-theme-colors);
 
 $font-family-base: 'Raleway', sans-serif;
 
-@import "./node_modules/bootstrap/scss/bootstrap";
+@import "/node_modules/bootstrap/scss/bootstrap.scss";
