@@ -6,9 +6,14 @@ body {
     background-color: #FCF5EE;
 }
 
-h1, h2, p {
+h1, h2, p, small, i {
     color: #221A43;
 }
+
+.social-logo {
+    color: #221A43;
+}
+
 
 .card{
     box-shadow: 5px 5px 14px -2px #221A43;
