@@ -1,25 +1,29 @@
+import Router from "./Router.js";
+
 export default class App {
+  static #_instance = null;
+  static get instance() {
+    return new App();
+  }
 
-    static #_instance = null;
-    static get instance() {return new App();}
-    
-    name = "MyApp";
+  #router = null;
+  get router() {
+    return this.#router;
+  }
 
-    constructor() {
-        if (App.#_instance != null && App.#_instance instanceof App) {
-            return App.#_instance;
-        }
+  name = "MyApp";
 
-        App.#_instance = this;
-
-        window.onclick = this.hanglePageClick;
-        window.onload = this.navigate;
-        window.onpopstate = this.navigate;
-
+  constructor() {
+    if (App.#_instance != null && App.#_instance instanceof App) {
+      return App.#_instance;
     }
 
-    render(){
-        document.getElementById('app').firstElementChild?.remove();
-        document.getElementById('app').append(this.router.screen);
-    }
+    App.#_instance = this;
+    this.#router = new Router();
+  }
+
+  render() {
+    document.getElementById("app").firstElementChild?.remove();
+    document.getElementById("app").append(this.router.screen);
+  }
 }
