@@ -9,7 +9,7 @@ export default class LoginScreen extends HTMLElement{
 
 
     render(){
-        return'<div>${this.constructor.name}</div>'
+        return `<div>${this.constructor.name}</div>`
     }
 }
 

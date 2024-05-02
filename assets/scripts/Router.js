@@ -1,11 +1,11 @@
 
-import HomeScreen from "/screens/HomeScreen.js";
-import LoginScreen from "/screens/LoginScreen.js";
-import MenuScreen from "/screens/MenuScreen.js";
-import BookingScreen from "/screens/BookingScreen.js";
-import NotfoundScreen from "/screens/NotfoundScreen.js";
-import AboutScreen from "/screens/AboutScreen.js";
-import SamediScreen from "/screens/SamediScreen.js";
+import HomeScreen from "../screens/HomeScreen.js";
+import LoginScreen from "../screens/LoginScreen.js";
+import MenuScreen from "../screens/MenuScreen.js";
+import BookingScreen from "../screens/BookingScreen.js";
+import NotfoundScreen from "../screens/NotfoundScreen.js";
+import AboutScreen from "../screens/AboutScreen.js";
+import SamediScreen from "../screens/SamediScreen.js";
 
 import App from "./App.js";
 
@@ -32,17 +32,17 @@ export default class Router{
     };
 
     navigate = (e) => {
-        if (location.pathname == "/" || location.pathname == "/home") {
+        if (location.pathname == "/" || location.pathname == "/home.html") {
           this.#screen = new HomeScreen();
-        } else if (location.pathname == "/login") {
+        } else if (location.pathname == "/login.html") {
           this.#screen = new LoginScreen();
-        } else if (location.pathname == "/menu") {
+        } else if (location.pathname == "/menu.html") {
           this.#screen = new MenuScreen();
-        } else if (location.pathname == "/samedi") {
+        } else if (location.pathname == "/samedi.html") {
           this.#screen = new SamediScreen();
-        } else if (location.pathname == "/booking") {
+        } else if (location.pathname == "/booking.html") {
           this.#screen = new BookingScreen();
-        } else if (location.pathname == "/about-us") {
+        } else if (location.pathname == "/about-us.html") {
           this.#screen = new AboutScreen();
         } else {
           this.#screen = new NotfoundScreen();

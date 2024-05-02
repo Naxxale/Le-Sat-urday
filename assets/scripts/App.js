@@ -4,7 +4,6 @@ export default class App{
 
     static #_instance = null;
     static get instance() {return new App();}
-    static getInstance() {return new App();}
 
     #router = null;
     get router(){return this.#router;}
