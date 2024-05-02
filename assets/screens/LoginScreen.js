@@ -5,7 +5,7 @@ export default class LoginScreen extends HTMLElement {
     this.innerHTML = this.render();
   }
   render() {
-    return `<div>${this.constructor.name}</div>`;
+    return `<div>${this.constructor.name.replace('Screen', '')}</div>`;
   }
 }
 customElements.define("login-screen", LoginScreen);

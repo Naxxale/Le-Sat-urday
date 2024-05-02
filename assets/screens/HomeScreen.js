@@ -1,11 +1,11 @@
-// export default class HomeScreen extends HTMLElement {
-//   constructor() {
-//     super();
+export default class HomeScreen extends HTMLElement {
+  constructor() {
+    super();
 
-//     this.innerHTML = this.render();
-//   }
-//   render() {
-//     return `<div>${this.constructor.name}</div>`;
-//   }
-// }
-// customElements.define("home-screen", HomeScreen);
+    this.innerHTML = this.render();
+  }
+  render() {
+    return `<div>${this.constructor.name.replace("Screen", "")}</div>`;
+  }
+}
+customElements.define("home-screen", HomeScreen);
