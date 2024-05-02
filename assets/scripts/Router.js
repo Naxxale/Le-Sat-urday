@@ -1,12 +1,13 @@
-import App from "./App.js";
 
 import HomeScreen from "/screens/HomeScreen.js";
-import  LoginScreen from "/screens/LoginScreen.js";
+import LoginScreen from "/screens/LoginScreen.js";
 import MenuScreen from "/screens/MenuScreen.js";
-import BookingScreen from "/.screen/BookingScreen.js"
+import BookingScreen from "/screens/BookingScreen.js";
 import NotfoundScreen from "/screens/NotfoundScreen.js";
 import AboutScreen from "/screens/AboutScreen.js";
 import SamediScreen from "/screens/SamediScreen.js";
+
+import App from "./App.js";
 
 export default class Router{
     
@@ -31,27 +32,21 @@ export default class Router{
     };
 
     navigate = (e) => {
-        if(location.pathname == '/' || location.pathname == '/home'){
-            this.#screen = new HomeScreen({images:["src/assets/images/image1.png"]});
-        }
-        else if (location.pathname == '/Login'){
-            this.#screen = new LoginScreenScreen();
-        }
-        else if (location.pathname == '/Menu'){
-            this.#screen = new MenuScreen();
-        }
-        else if (location.pathname == '/Booking'){
-            this.#screen = new BookingScreen();
-        }
-        else if (location.pathname == '/About'){
-            this.#screen = new AboutScreen();
-        }
-        else if (location.pathname == '/Samedi'){
-            this.#screen = new SamediScreen();
-        }
-        else{
-            this.#screen = new NotfoundScreen();
+        if (location.pathname == "/" || location.pathname == "/home") {
+          this.#screen = new HomeScreen();
+        } else if (location.pathname == "/login") {
+          this.#screen = new LoginScreen();
+        } else if (location.pathname == "/menu") {
+          this.#screen = new MenuScreen();
+        } else if (location.pathname == "/samedi") {
+          this.#screen = new SamediScreen();
+        } else if (location.pathname == "/booking") {
+          this.#screen = new BookingScreen();
+        } else if (location.pathname == "/about-us") {
+          this.#screen = new AboutScreen();
+        } else {
+          this.#screen = new NotfoundScreen();
         }
         App.instance.render();
-    };
+      };
 }
