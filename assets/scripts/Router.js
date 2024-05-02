@@ -30,15 +30,15 @@ export default class Router {
   navigate = (e) => {
     if (location.pathname == "/" || location.pathname == "/home") {
       this.#screen = new HomeScreen();
-    } else if (location.pathname == "/login") {
+    } else if (location.pathname == "/login.html") {
       this.#screen = new LoginScreen();
-    } else if (location.pathname == "/menu") {
+    } else if (location.pathname == "/menu.html") {
       this.#screen = new Menuscreen();
-    } else if (location.pathname == "/samedi") {
+    } else if (location.pathname == "/samedi.html") {
       this.#screen = new SamediScreen();
-    } else if (location.pathname == "/booking") {
+    } else if (location.pathname == "/booking.html") {
       this.#screen = new BookingScreen();
-    } else if (location.pathname == "/about-us") {
+    } else if (location.pathname == "/about-us.html") {
       this.#screen = new AboutScreen();
     } else {
       this.#screen = new NotfoundScreen();
