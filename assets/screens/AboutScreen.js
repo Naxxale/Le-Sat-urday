@@ -5,7 +5,9 @@ export default class AboutScreen extends HTMLElement {
     this.innerHTML = this.render();
   }
   render() {
-    return `<div class="container-fluid">
+    return `
+    <style>@import "./assets/styles/about-us.css"</style>
+    <div class="container-fluid">
     <h1 class="display-3 fw-bold mb-3 text-center">A propos de nous !</h1>
     <p class="lead mb-0 text-center">
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque eius
