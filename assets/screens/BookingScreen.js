@@ -1,4 +1,4 @@
-export default class BookingScreen {
+export default class BookingScreen extends HTMLElement {
     constructor() {
         super();
 

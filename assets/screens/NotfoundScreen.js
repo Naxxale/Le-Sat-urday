@@ -1,5 +1,5 @@
-export default class NotfoundScreen {
-    constructor() {
+export default class NotfoundScreen extends HTMLElement {
+    constructor() { 
         super();
 
         this.innerHTML = this.render();

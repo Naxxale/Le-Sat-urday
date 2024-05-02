@@ -1,4 +1,4 @@
-export default class SamediScreen {
+export default class SamediScreen extends HTMLElement {
     constructor() {
         super();
 

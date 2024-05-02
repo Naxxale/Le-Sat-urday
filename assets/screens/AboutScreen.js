@@ -1,4 +1,4 @@
-export default class AboutScreen {
+export default class AboutScreen extends HTMLElement {
     constructor() {
         super();
 

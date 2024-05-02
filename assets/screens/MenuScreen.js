@@ -1,4 +1,4 @@
-export default class MenuScreen {
+export default class MenuScreen extends HTMLElement {
     constructor() {
         super();
 
