@@ -28,7 +28,7 @@ export default class AboutScreen extends HTMLElement {
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img
-                src="assets/img/photo3.jpg"
+                src="assets/img/about/photo3.jpg"
                 class="d-block w-100 img-fluid"
                 alt="photo3"
               />
@@ -42,28 +42,28 @@ export default class AboutScreen extends HTMLElement {
             </div>
             <div class="carousel-item">
               <img
-                src="assets/img/plat1.jpg"
+                src="assets/img/about/plat1.jpg"
                 class="d-block w-100 img-fluid"
                 alt="plat1"
               />
             </div>
             <div class="carousel-item">
               <img
-                src="assets/img/plat2.jpg"
+                src="assets/img/about/plat2.jpg"
                 class="d-block w-100 img-fluid"
                 alt="plat2"
               />
             </div>
             <div class="carousel-item">
               <img
-                src="assets/img/plat3.jpg"
+                src="assets/img/about/plat3.jpg"
                 class="d-block w-100 img-fluid"
                 alt="plat3"
               />
             </div>
             <div class="carousel-item">
               <img
-                src="assets/img/pain-choc.jpeg"
+                src="assets/img/about/pain-choc.jpeg"
                 class="d-block w-100 img-fluid"
                 alt="pain-choc"
               />
@@ -125,7 +125,7 @@ export default class AboutScreen extends HTMLElement {
       <div class="col d-flex justify-content-center">
         <div class="card mt-3" style="width: 15rem">
           <img
-            src="/assets/img/profil-solen.jpg"
+            src="/assets/img/about/profil-solen.jpg"
             class="card-img-top"
             alt="profil-solen"
           />
@@ -141,7 +141,7 @@ export default class AboutScreen extends HTMLElement {
       <div class="col d-flex justify-content-center">
         <div class="card mt-3" style="width: 15rem">
           <img
-            src="/assets/img/profil-theo.jpg"
+            src="/assets/img/about/profil-theo.jpg"
             class="card-img-top"
             alt="profil-theo"
           />
@@ -157,7 +157,7 @@ export default class AboutScreen extends HTMLElement {
       <div class="col d-flex justify-content-center">
         <div class="card mt-3" style="width: 15rem">
           <img
-            src="/assets/img/profil-antoine.jpg"
+            src="/assets/img/about/profil-antoine.jpg"
             class="card-img-top"
             alt="profil-antoine"
           />
