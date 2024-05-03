@@ -1,6 +1,6 @@
 import AboutScreen from "../screens/AboutScreen.js";
 import BookingScreen from "../screens/BookingScreen.js";
-import HomeScreen from "../screens/Homescreen.js";
+import HomeScreen from "../screens/HomeScreen.js";
 import LoginScreen from "../screens/LoginScreen.js";
 import Menuscreen from "../screens/MenuScreen.js";
 import NotfoundScreen from "../screens/NotfoundScreen.js";

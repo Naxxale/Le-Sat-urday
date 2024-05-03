@@ -27,15 +27,15 @@ export default class HomeScreen extends HTMLElement {
       <div class="book">
         <div class="listeMenu">
           <h3>Titre</h3>
-          <li>Chocolatine</li>
+          <li>Pain au chocolat</li>
           <hr />
-          <li>Chocolatine</li>
+          <li>Pain au chocolat</li>
           <hr />
-          <li>Chocolatine</li>
+          <li>Pain au chocolat</li>
           <hr />
-          <li>Chocolatine</li>
+          <li>Pain au chocolat</li>
           <hr />
-          <li>Chocolatine</li>
+          <li>Pain au chocolat</li>
         </div>
         <div class="cover">
           <h3 class="underline">Menu Semaine</h3>
