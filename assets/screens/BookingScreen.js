@@ -9,7 +9,8 @@ export default class BookingScreen extends HTMLElement{
 
 
     render(){
-        return `<div>${this.constructor.name}</div>`
+        return `
+        `
     }
 }
 

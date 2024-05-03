@@ -18,23 +18,28 @@ export default class MenuScreen extends HTMLElement{
         <div class="col-12 row">
           
           <!--Partie gauche-->
-          <div class="col-6 border-start border-1 border-ternary">
+          <div class="col-6 border-end border-1 border-ternary">
           <div class="my-4">
-            <h4 class="text-center text-secondary">Plats</h4>
+            <div class = "row">
+              <img class=" col-3" src="assets/img/boissons.png" style = "height : 15vh"; "width : 5vw";>
+              <h4 class="text-center text-secondary ">Boissons</h4>
+            </div>
             <div class="container-fluid  border-top border-ternary border-2 col-6 ">
-              <p class="text-center text-secondary mt-3">Mojito</p>
-              <p class="text-center text-secondary">Grenadine</p>
-              <p class="text-center text-secondary">Eau</p>
+              <p class="text-center text-secondary mt-3">Mojito &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 5€</p>
+              <p class="text-center text-secondary">Grenadine &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 3€</p>
+              <p class="text-center text-secondary">Eau &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1€</p>
             </div>
           </div>
     
             <div class="my-4">
-             
-              <h4 class="text-center text-secondary"> Tapas</h4>
+              <div class = "">
+                <img src="assets/img/tapas.png" style = "height : 10vh"; "width : 10vw";>
+                <h4 class="text-center text-secondary"> Tapas</h4>
+              </div>
               <div class="container-fluid  border-top border-ternary border-2 col-6">
-                <p class="text-center text-secondary mt-3">Raclette-stick</p>
-                <p class="text-center text-secondary">Plateau de charcuterie</p>
-                <p class="text-center text-secondary">Plateau de fromage</p>
+                <p class="text-center text-secondary mt-3">Raclette-stick &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 6€</p>
+                <p class="text-center text-secondary">Plateau de charcuterie &emsp;&emsp; 7€</p>
+                <p class="text-center text-secondary">Plateau de fromage &emsp;&emsp;&emsp; 8€</p>
               </div>
             </div>
     
@@ -44,20 +49,26 @@ export default class MenuScreen extends HTMLElement{
           <!--Partie droite-->
           <div class="col-6 border-start border-1 border-ternary">
             <div class="my-4">
-              <h4 class="text-center text-secondary">Plats</h4>
+              <div class = "">
+                <h4 class="text-center text-secondary">Plats</h4>
+                <img src="assets/img/plat.png" style = "height : 10vh"; "width : 10vw";>
+              </div>
               <div class="container-fluid  border-top border-ternary border-2 col-6 ">
-                <p class="text-center text-secondary mt-3">Cheese Burger</p>
-                <p class="text-center text-secondary">Lasagne de Sam</p>
-                <p class="text-center text-secondary">Fish and Chips</p>
+                <p class="text-center text-secondary mt-3">Cheese Burger &emsp;&emsp;&emsp;&emsp;&emsp; 6€</p>
+                <p class="text-center text-secondary">Lasagne de Sam &emsp;&emsp;&emsp;&nbsp; &nbsp; &nbsp; 12€</p>
+                <p class="text-center text-secondary">Fish and Chips &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; 10€</p>
               </div>
             </div>
     
             <div class="my-4">
-              <h4 class="text-center text-secondary">Desserts</h4>
+              <div class = "">
+                <h4 class="text-center text-secondary">Desserts</h4>
+                <img src="assets/img/dessert.png" style = "height : 10vh"; "width : 10vw";>
+              </div>
               <div class="container-fluid  border-top border-ternary border-2 col-6">
-                <p class="text-center text-secondary mt-3">Pain au chocolat</p>
-                <p class="text-center text-secondary">Mousse au chocolat</p>
-                <p class="text-center text-secondary">Tartelette au chocolat</p>
+                <p class="text-center text-secondary mt-3">Pain au chocolat &emsp;&emsp;&emsp;&emsp; 1€</p>
+                <p class="text-center text-secondary">Mousse au chocolat &emsp;&emsp;&nbsp;&nbsp; 4€</p>
+                <p class="text-center text-secondary">Tartelette au chocolat &emsp;&nbsp;&nbsp;&nbsp; 5€</p>
               </div>
             </div>
           </div>
