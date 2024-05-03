@@ -40,7 +40,7 @@ export default class MenuScreen extends HTMLElement{
   
           <div class="my-4">
             <div class = "">
-              <h4 class="text-center text-secondary"><img src="assets/img/cheese.svg" style ="height : 2.5vh" class="me-1.5"> Tapas</h4>
+              <h4 class="text-center text-secondary"><img src="assets/img/cheese.svg" style ="height : 2.5vh" class="me-"> Tapas</h4>
             </div>
             <div class="container-fluid  border-top border-ternary border-2 col-6">
               <p class="text-center text-secondary mt-3">Raclette-stick &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 6€</p>
