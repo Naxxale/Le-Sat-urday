@@ -1,84 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/styles/custom_bootstrap.css">
-    <link rel="stylesheet" href="./assets/styles/index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles/custom_bootstrap.css" />
+    <link rel="stylesheet" href="./assets/styles/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <title>Document</title>
-</head>
-<body>
-    <header>   
-        <nav class="maNav">
-            <a href="/" class="logo" target="spa"><img src="./assets/img/logoAccueil.png" alt="image d'Accueil"></a>
-            <div class="middleNav">
-            <a href="/menu.html" class="navAnimation" target="spa">Menu</a>
-            <a href="/reservation.html" class="navAnimation" target="spa">Réservation</a>
-            <a href="/samedi.html" class="navAnimation" target="spa">Sat'urday</a>
-            <a href="/about-us.html" class="navAnimation" target="spa">A propos</a>
-            </div>
-            <div class="logIn">
-                <box-icon name='log-in' color='#627750' ></box-icon>
-                <a href="/login.html" class="navAnimation" target="spa">Connexion</a>
-            </div>
-        </nav>   
+  </head>
+  <body>
+    <header>
+      <nav class="maNav">
+        <a href="/" class="logo" target="spa"
+          ><img src="./assets/img/logoAccueil.png" alt="image d'Accueil"
+        /></a>
+        <div class="middleNav">
+          <a href="/menu.html" class="navAnimation" target="spa">Menu</a>
+          <a href="/reservation.html" class="navAnimation" target="spa"
+            >Réservation</a
+          >
+          <a href="/samedi.html" class="navAnimation" target="spa">Sat'urday</a>
+          <a href="/about-us.html" class="navAnimation" target="spa"
+            >A propos</a
+          >
+        </div>
+        <div class="logIn">
+          <box-icon name="log-in" color="#627750"></box-icon>
+          <a href="/login.html" class="navAnimation" target="spa">Connexion</a>
+        </div>
+      </nav>
     </header>
     <main>
-        <div id="app"></div>
-        <div class="horizontal-line-nav"></div>
-        <div class="firstContent">
-            <img src="./assets/img/firstBackground.jpg" alt="">
-            <h1>Envie de passer une bonne soirée <span class="underline">entre amis</span> ? <box-icon class="sun" name='sun' animation='tada' color='#221a43' ></box-icon></h1>
-        </div>
-        <div class="horizontal-line"></div>
-        <h2>Notre Menu</h2> 
-        <div class="menu">  
-            <div class="book">
-                <div class="listeMenu">
-                    <h3>Titre</h3>
-                    <li>Chocolatine</li>
-                    <hr>
-                    <li>Chocolatine</li>
-                    <hr>
-                    <li>Chocolatine</li>
-                    <hr>
-                    <li>Chocolatine</li>
-                    <hr>
-                    <li>Chocolatine</li>
-                </div> 
-                <div class="cover">
-                    <h3 class="underline">Menu Semaine</h3>
-                </div>
-            </div>
-            <button class="button"> 
-                En savoir plus
-            </button>
-            <div class="book">
-                <div class="listeMenu">
-                    <h3>Titre</h3>
-                    <li>Chocolatine</li>
-                    <hr>
-                    <li>Chocolatine</li>
-                    <hr>
-                    <li>Chocolatine</li>
-                    <hr>
-                    <li>Chocolatine</li>
-                    <hr>
-                    <li>Chocolatine</li>
-                </div> 
-                <div class="cover">
-                    <h3 class="underline">Menu Sat'Urday</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="aboutUs">
-
-        </div>
-
-
+      <div id="app"></div>
     </main>
+    
     <script type="module" src="./assets/scripts/index.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-</body>
+  </body>
 </html>

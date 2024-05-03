@@ -270,4 +270,51 @@ h2 {
    .button:active {
 	filter: brightness(.8);
    }
+
+   .aboutUs{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 20px 20%;
+	align-items: center;
+	text-align: center;
+   }
    
+   .aboutUs img {
+	height: 50vh;
+    width:30vw;
+	border-radius: 20px;
+   }
+
+   .aboutUsText h3 {
+	color: #221A43;
+	color: #221A43;
+	font-size: 3em;
+	font-weight: bold;
+   }
+
+   .aboutUsText {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+   }
+
+   .aboutUsText p {
+	text-align: center;
+	width: 70%;
+   }
+
+   .registration {
+	display: flex;
+	flex-direction: column;
+	margin-top: 50px;
+	align-items: center;
+   }
+
+   .registration button {
+	width: 15%;
+   }
+
+   footer p, small {
+	color: #221A43;
+   }
