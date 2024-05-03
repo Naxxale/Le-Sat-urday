@@ -5,7 +5,7 @@ export default class AboutScreen extends HTMLElement {
     this.innerHTML = this.render();
   }
   render() {
-    return `
+    return `<style>@import "./assets/styles/nav.css"</style>
     <style>@import "./assets/styles/about-us.css"</style>
     <div class="container-fluid">
     <h1 class="display-3 fw-bold mb-3 text-center">A propos de nous !</h1>
@@ -35,7 +35,7 @@ export default class AboutScreen extends HTMLElement {
             </div>
             <div class="carousel-item">
               <img
-                src="assets/img/interieur.jpg"
+                src="assets/img/about/interieur.jpg"
                 class="d-block w-100 img-fluid"
                 alt="interieur"
               />

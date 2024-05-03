@@ -28,7 +28,7 @@ export default class Router {
   };
 
   navigate = (e) => {
-    if (location.pathname == "/" || location.pathname == "/home") {
+    if (location.pathname == "/" || location.pathname == "/index.html") {
       this.#screen = new HomeScreen();
     } else if (location.pathname == "/login.html") {
       this.#screen = new LoginScreen();

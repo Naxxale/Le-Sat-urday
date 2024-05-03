@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "scss-compile": "sass custom_bootstrap.scss:index.css --no-source-map --style compressed",
-    "watch-scss": "sass custom_bootstrap.scss:index.css --no-source-map --style compressed --watch"
+    "watch-scss": "sass custom_bootstrap.scss:index.css --no-source-map --style compressed --watch",
+    "dev": "ws --spa index.html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "local-web-server": "^5.3.3"
   }
 }
