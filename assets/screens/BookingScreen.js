@@ -13,7 +13,7 @@ export default class BookingScreen extends HTMLElement{
         <!--Formulaire de reservation-->
         <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center flex-column" style = "background-image: url('assets/img/bgResa.jpeg');">
         <h2 class ="text-center text-white mb-4">Formulaire de Réservation</h2>
-        <div class ="container col-5 min-vh-60 bg-primary pt-3 rounded">
+        <div class ="container min-vh-60 bg-primary pt-3 rounded">
             <form>
                 <div class="mb-3">
                 <label for="clientName" class="form-label text-secondary">Votre nom</label>
