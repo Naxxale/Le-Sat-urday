@@ -23,6 +23,4 @@ export default class App{
         document.getElementById('app').firstElementChild?.remove();
         document.getElementById('app').append(this.router.screen);
     }
-
-
 }

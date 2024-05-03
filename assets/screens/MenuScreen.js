@@ -9,7 +9,8 @@ export default class MenuScreen extends HTMLElement{
 
 
     render(){
-        return `<div class="container">
+        return `
+      <div class="container-fluid" style = "background-image: url('assets/img/bg.jpeg');">
         <div class="container-fluid bg-primary min-vh-100 col-8">
             <h1 class="primary text-center text-secondary">Menu</h1>
             <h2 class="primary text-center text-secondary mb-5">Le Sat'urday</h2>
@@ -17,17 +18,15 @@ export default class MenuScreen extends HTMLElement{
         <div class="col-12 row">
           
           <!--Partie gauche-->
-          <div class="col-6">
-    
-            <div class=" my-4">
-              <h4 class="text-center text-secondary">Boissons</h4>
-              <div class="container border-top border-ternary border-2 col-6 ">
-                <p class="text-center text-secondary mt-3">Virgin Mojito</p>
-                <p class="text-center text-secondary">Cocktail Molotov</p>
-                <p class="text-center text-secondary">Eau simple et basique</p>
-                
-              </div>
+          <div class="col-6 border-start border-1 border-ternary">
+          <div class="my-4">
+            <h4 class="text-center text-secondary">Plats</h4>
+            <div class="container-fluid  border-top border-ternary border-2 col-6 ">
+              <p class="text-center text-secondary mt-3">Mojito</p>
+              <p class="text-center text-secondary">Grenadine</p>
+              <p class="text-center text-secondary">Eau</p>
             </div>
+          </div>
     
             <div class="my-4">
              
@@ -40,9 +39,10 @@ export default class MenuScreen extends HTMLElement{
             </div>
     
           </div>
+          
     
           <!--Partie droite-->
-          <div class="col-6  border-start border-ternary border-2">
+          <div class="col-6 border-start border-1 border-ternary">
             <div class="my-4">
               <h4 class="text-center text-secondary">Plats</h4>
               <div class="container-fluid  border-top border-ternary border-2 col-6 ">
