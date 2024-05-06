@@ -1,10 +1,14 @@
-import Screen from "./Screen.js"
-export default class SamediScreen extends Screen {
+import Screen from "./Screen.js";
 
+export default class SamediScreen extends Screen {
+  
   render() {
     return `<style>@import "./assets/styles/nav.css"</style>
-    <header><navbar-component/></header>
+    <style>@import "./assets/styles/footer.css"</style>
     <div class="container-fluid" style = "background-image: url('assets/img/menu/bg.jpeg');">
+    <header>
+    <navbar-component/>
+    </header>
         <div class="container-fluid bg-primary min-vh-100 col-7">
           <div class="container d-flex align-items-center justify-content-center">
             <img src="assets/img/menu/couverts.png" style = "height : 12vh"; >
@@ -82,8 +86,9 @@ export default class SamediScreen extends Screen {
       </div>
     </div>
   </div>
-  <footer><footer-component/></footer>
-  `;
+  <footer>
+  <footer-component/>
+  </footer>`;
   }
 }
 customElements.define("samedi-screen", SamediScreen);

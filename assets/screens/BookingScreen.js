@@ -1,11 +1,13 @@
-import Screen from "./Screen.js"
+import Screen from "./Screen.js";
+
 export default class BookingScreen extends Screen {
 
-
   render() {
-    return `
-    <style>@import "./assets/styles/nav.css"</style>
-    <header><navbar-component/></header>
+    return `<style>@import "./assets/styles/nav.css"</style>
+    <style>@import "./assets/styles/footer.css"</style>
+    <header>
+    <navbar-component/>
+    </header>
         <!--Formulaire de reservation-->
         <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center flex-column" style = "background-image: url('assets/img/Resa/bgResa.jpeg');">
         <h2 class ="text-center text-white mb-4">Formulaire de Réservation</h2>
@@ -45,8 +47,9 @@ export default class BookingScreen extends Screen {
             </form>
         </div>
     </div>
-    <footer><footer-component/></footer>
-        `
+    <footer>
+  <footer-component/>
+  </footer>`
   }
 }
 customElements.define("booking-screen", BookingScreen);

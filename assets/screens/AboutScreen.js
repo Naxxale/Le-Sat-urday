@@ -1,10 +1,13 @@
-import Screen from "./Screen.js"
+import Screen from "./Screen.js";
+
 export default class AboutScreen extends Screen {
   render() {
-    return `
-    <style>@import "./assets/styles/nav.css"</style>
+    return `<style>@import "./assets/styles/nav.css"</style>
+    <style>@import "./assets/styles/footer.css"</style>
     <style>@import "./assets/styles/about-us.css"</style>
-    <header><navbar-component/></header>
+    <header>
+    <navbar-component/>
+    </header>
     <div class="container-fluid">
     <h1 class="display-3 fw-bold mb-3 text-center">A propos de nous !</h1>
     <p class="lead mb-0 text-center">
@@ -170,8 +173,9 @@ export default class AboutScreen extends Screen {
       </div>
     </div>
   </div>
-  <footer><footer-component/></footer>
-`;
+  <footer>
+  <footer-component/>
+  </footer>`;
   }
 }
 customElements.define("about-screen", AboutScreen);

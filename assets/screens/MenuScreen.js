@@ -1,10 +1,14 @@
-import Screen from "./Screen.js"
+import Screen from "./Screen.js";
+
 export default class Menuscreen extends Screen {
- 
+
 
   render() {
     return `<style>@import "./assets/styles/nav.css"</style>
-    <header><navbar-component/></header>
+    <style>@import "./assets/styles/footer.css"</style>
+    <header>
+    <navbar-component/>
+    </header>
     <div class="container-fluid" style = "background-image: url('assets/img/menu/bg.jpeg');">
         <div class="container-fluid bg-primary min-vh-100 col-7">
           <div class="container d-flex align-items-center justify-content-center">
@@ -16,7 +20,6 @@ export default class Menuscreen extends Screen {
             <img src="assets/img/menu/couvertsflip.png" style = "height : 12vh"; >
           </div>
         <div class="col-12 row">
-          
         <!--Partie gauche-->
         <div class="col-6 border-end border-1 border-ternary">
         <div class="my-4">
@@ -83,8 +86,9 @@ export default class Menuscreen extends Screen {
       </div>
     </div>
   </div>
-  <footer><footer-component/></footer>
-  `;
+  <footer>
+  <footer-component/>
+  </footer>`;
   }
 }
 customElements.define("menu-screen", Menuscreen);

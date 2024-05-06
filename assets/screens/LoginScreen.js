@@ -1,11 +1,15 @@
-import Screen from "./Screen.js"
-export default class LoginScreen extends Screen {
+import Screen from "./Screen.js";
 
+export default class LoginScreen extends Screen {
+  
   render() {
     return `
-   <style>@import "./assets/styles/login.css"</style>
     <style>@import "./assets/styles/nav.css"</style>
-    <header><navbar-component/></header>
+    <style>@import "./assets/styles/login.css"</style>
+    <style>@import "./assets/styles/footer.css"</style>
+    <header>
+    <navbar-component/>
+    </header>
     <div class="wrapper">
     <div class="card-switch">
         <label class="switch">
@@ -33,8 +37,7 @@ export default class LoginScreen extends Screen {
            </div>
         </label>
     </div>
-</div>
-`;
+</div>`;
   }
 }
 customElements.define("login-screen", LoginScreen);

@@ -1,11 +1,14 @@
-import Screen from "./Screen.js"
-export default class HomeScreen extends Screen {
+import Screen from "./Screen.js";
 
+export default class HomeScreen extends Screen {
+  
   render() {
-    return `
-    <style>@import "./assets/styles/nav.css"</style>
+    return `<style>@import "./assets/styles/nav.css"</style>
+    <style>@import "./assets/styles/footer.css"</style>
     <style>@import "./assets/styles/index.css"</style>
-    <header><navbar-component/></header>
+    <header>
+    <navbar-component/>
+    </header>
     <div class="horizontal-line-nav"></div>
     <div class="firstContent">
       <img src="./assets/img/home/firstBackground.jpg" alt="" />
@@ -75,8 +78,9 @@ export default class HomeScreen extends Screen {
       <h2 class="underline">Réservez dès maintenant !</h2>
       <button class="button">Je réserve !</button>
     </div>
-    <footer><footer-component/></footer>
-    `;
+    <footer>
+  <footer-component/>
+  </footer>`;
   }
 }
 customElements.define("home-screen", HomeScreen);
