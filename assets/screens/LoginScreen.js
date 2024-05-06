@@ -1,13 +1,15 @@
-export default class LoginScreen extends HTMLElement {
-  constructor() {
-    super();
+import Screen from "./Screen.js";
 
-    this.innerHTML = this.render();
-  }
+export default class LoginScreen extends Screen {
+  
   render() {
     return `
-    <style>@import "./assets/styles/login.css"</style>
     <style>@import "./assets/styles/nav.css"</style>
+    <style>@import "./assets/styles/login.css"</style>
+    <style>@import "./assets/styles/footer.css"</style>
+    <header>
+    <navbar-component/>
+    </header>
     <div class="wrapper">
     <div class="card-switch">
         <label class="switch">

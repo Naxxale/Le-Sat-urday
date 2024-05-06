@@ -1,12 +1,14 @@
-export default class SamediScreen extends HTMLElement {
-  constructor() {
-    super();
+import Screen from "./Screen.js";
 
-    this.innerHTML = this.render();
-  }
+export default class SamediScreen extends Screen {
+  
   render() {
     return `<style>@import "./assets/styles/nav.css"</style>
+    <style>@import "./assets/styles/footer.css"</style>
     <div class="container-fluid" style = "background-image: url('assets/img/menu/bg.jpeg');">
+    <header>
+    <navbar-component/>
+    </header>
         <div class="container-fluid bg-primary min-vh-100 col-7">
           <div class="container d-flex align-items-center justify-content-center">
             <img src="assets/img/menu/couverts.png" style = "height : 12vh"; >
@@ -84,22 +86,8 @@ export default class SamediScreen extends HTMLElement {
       </div>
     </div>
   </div>
-    <footer>
-    <div class="container text-light text-center">
-      <p class="display-5 mb-3 fw-bold text-secondary">Suivez nous sur les réseaux !</p>
-      <div class="container mb-3 icon-area">
-        <a href="https://www.facebook.com/" class="social-logo m-3"
-          ><i class="bi bi-facebook h1"></i
-        ></a>
-        <a href="https://www.tiktok.com/" class="social-logo m-3"
-          ><i class="bi bi-tiktok h1"></i
-        ></a>
-        <a href="https://www.instagram.com/" class="social-logo m-3"
-          ><i class="bi bi-instagram h1"></i
-        ></a>
-      </div>
-      <small class="text-secondary">made with love by Antoine C</small>
-    </div>
+  <footer>
+  <footer-component/>
   </footer>`;
   }
 }
