@@ -23,6 +23,8 @@ a {
 
 header {
     padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #FCF5EE;
 }
 
 nav img {

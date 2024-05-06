@@ -5,3 +5,8 @@ p, small, i {
 .social-logo {
     color: #627750;
 }
+
+footer{
+    padding-top: 20px;
+    background-color: #FCF5EE;
+}
