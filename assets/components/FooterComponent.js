@@ -7,7 +7,6 @@ export default class FooterComponent extends HTMLElement {
 
     render(){
         return `<style>@import "./assets/styles/footer.css"</style>
-        <hr/>
         <div class="container text-light text-center">
           <p class="display-5 mb-3 fw-bold text-secondary">Suivez nous sur les réseaux !</p>
           <div class="container mb-3 icon-area">
