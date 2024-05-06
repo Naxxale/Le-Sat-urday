@@ -8,12 +8,15 @@ body {
 img {
     height: 20vh;
     width: 10vw;
-}
-
-.img {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 .wrapper {
