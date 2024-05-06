@@ -1,0 +1,34 @@
+a {
+    color: #627750;
+}
+
+body {
+    background-color: #FCF5EE;
+}
+
+h1, h2, p, small, i {
+    color: #221A43;
+}
+
+.social-logo {
+    color: #627750;
+}
+
+.card{
+    box-shadow: 5px 5px 14px -2px #221A43;
+}
+
+.card-img-top {
+    padding: 5px;
+}
+
+#carouselExampleFade {
+    box-shadow: 5px 5px 14px -2px #221A43;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#carouselExampleFade img{
+    height: 500px;
+    object-fit: cover;
+}

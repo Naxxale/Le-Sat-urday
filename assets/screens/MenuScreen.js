@@ -1,24 +1,21 @@
-export default class MenuScreen extends HTMLElement{
+export default class Menuscreen extends HTMLElement {
+  constructor() {
+    super();
 
-    constructor(){
-        super();
+    this.innerHTML = this.render();
+  }
 
-        this.innerHTML = this.render();
-    }
-
-
-
-    render(){
-        return `
-      <div class="container-fluid" style = "background-image: url('assets/img/bg.jpeg');">
+  render() {
+    return `<style>@import "./assets/styles/nav.css"</style>
+    <div class="container-fluid" style = "background-image: url('assets/img/menu/bg.jpeg');">
         <div class="container-fluid bg-primary min-vh-100 col-7">
           <div class="container d-flex align-items-center justify-content-center">
-            <img src="assets/img/couverts.png" style = "height : 12vh"; >
+            <img src="assets/img/menu/couverts.png" style = "height : 12vh"; >
             <div class ="m-5">
               <h1 class="primary text-center text-secondary">Menu</h1>
               <h2 class="primary text-center text-secondary mb-5">Le Sat'urday</h2>
             </div>
-            <img src="assets/img/couvertsflip.png" style = "height : 12vh"; >
+            <img src="assets/img/menu/couvertsflip.png" style = "height : 12vh"; >
           </div>
         <div class="col-12 row">
           
@@ -40,7 +37,7 @@ export default class MenuScreen extends HTMLElement{
   
           <div class="my-4">
             <div class = "">
-              <h4 class="text-center text-secondary"><img src="assets/img/cheese.svg" style ="height : 2.5vh" class="me-"> Tapas</h4>
+              <h4 class="text-center text-secondary"><img src="assets/img/menu/cheese.svg" style ="height : 2.5vh" class="me-"> Tapas</h4>
             </div>
             <div class="container-fluid  border-top border-ternary border-2 col-6">
               <p class="text-center text-secondary mt-3">Raclette-stick &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 6€</p>
@@ -58,7 +55,7 @@ export default class MenuScreen extends HTMLElement{
         <div class="col-6 border-start border-1 border-ternary">
           <div class="my-4">
             <div class = "">
-              <h4 class="text-center text-secondary"><img src="assets/img/burger.svg" style ="height : 2.5vh" class="me-2">Plats</h4>
+              <h4 class="text-center text-secondary"><img src="assets/img/menu/burger.svg" style ="height : 2.5vh" class="me-2">Plats</h4>
             </div>
             <div class="container-fluid  border-top border-ternary border-2 col-6 ">
               <p class="text-center text-secondary mt-3">Cheese Burger &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp; 8€</p>
@@ -88,26 +85,23 @@ export default class MenuScreen extends HTMLElement{
       </div>
     </div>
   </div>
-        <!--Footer-->
-        <footer class="py-5 mt-5">
-        <hr />
-        <div class="container text-light text-center">
-          <p class="display-5 mb-3 fw-bold text-secondary">Suivez nous sur les réseaux !</p>
-          <div class="container mb-3 icon-area">
-            <a href="https://www.facebook.com/" class="social-logo m-3"
-              ><i class="bi bi-facebook h1"></i
-            ></a>
-            <a href="https://www.tiktok.com/" class="social-logo m-3"
-              ><i class="bi bi-tiktok h1"></i
-            ></a>
-            <a href="https://www.instagram.com/" class="social-logo m-3"
-              ><i class="bi bi-instagram h1"></i
-            ></a>
-          </div>
-          <small class="text-secondary">made with love by Antoine C</small>
-        </div>
-      </footer>`
-    }
+  <footer>
+  <div class="container text-light text-center">
+    <p class="display-5 mb-3 fw-bold text-secondary">Suivez nous sur les réseaux !</p>
+    <div class="container mb-3 icon-area">
+      <a href="https://www.facebook.com/" class="social-logo m-3"
+        ><i class="bi bi-facebook h1"></i
+      ></a>
+      <a href="https://www.tiktok.com/" class="social-logo m-3"
+        ><i class="bi bi-tiktok h1"></i
+      ></a>
+      <a href="https://www.instagram.com/" class="social-logo m-3"
+        ><i class="bi bi-instagram h1"></i
+      ></a>
+    </div>
+    <small class="text-secondary">made with love by Antoine C</small>
+  </div>
+</footer>`;
+  }
 }
-
-    customElements.define("menu-screen", MenuScreen);
+customElements.define("menu-screen", Menuscreen);

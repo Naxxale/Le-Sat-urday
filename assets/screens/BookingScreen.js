@@ -1,17 +1,14 @@
-export default class BookingScreen extends HTMLElement{
+export default class BookingScreen extends HTMLElement {
+  constructor() {
+    super();
 
-    constructor(){
-        super();
+    this.innerHTML = this.render();
+  }
 
-        this.innerHTML = this.render();
-    }
-
-
-
-    render(){
-        return `
+  render() {
+    return `<style>@import "./assets/styles/nav.css"</style>
         <!--Formulaire de reservation-->
-        <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center flex-column" style = "background-image: url('assets/img/bgResa.jpeg');">
+        <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center flex-column" style = "background-image: url('assets/img/Resa/bgResa.jpeg');">
         <h2 class ="text-center text-white mb-4">Formulaire de Réservation</h2>
         <div class ="container min-vh-60 bg-primary pt-3 rounded">
             <form>
@@ -50,26 +47,12 @@ export default class BookingScreen extends HTMLElement{
         </div>
     </div>
     <!--Footer-->
-    <footer class="py-5 mt-5">
-    <hr />
-    <div class="container text-light text-center">
-      <p class="display-5 mb-3 fw-bold text-secondary">Suivez nous sur les réseaux !</p>
-      <div class="container mb-3 icon-area">
-        <a href="https://www.facebook.com/" class="social-logo m-3"
-          ><i class="bi bi-facebook h1"></i
-        ></a>
-        <a href="https://www.tiktok.com/" class="social-logo m-3"
-          ><i class="bi bi-tiktok h1"></i
-        ></a>
-        <a href="https://www.instagram.com/" class="social-logo m-3"
-          ><i class="bi bi-instagram h1"></i
-        ></a>
-      </div>
-      <small class="text-secondary">made with love by Antoine C</small>
-    </div>
-  </footer>
+        <div class="container-fluid bg-secondary d-flex justify-content-around">
+          <p style ="color:white">Termes et conditions</p>
+          <p style="color:white">Mentions légales</p>
+          <p style="color:white"> <i class="bi bi-c-circle"></i> 2024 par SAT'URDAY</p>
+        </div>
         `
-    }
+  }
 }
-
-    customElements.define("booking-screen", BookingScreen);
+customElements.define("booking-screen", BookingScreen);
