@@ -1,13 +1,11 @@
 export default class NavbarComponent extends HTMLElement {
-    constructor() {
-        super();
+  constructor() {
+    super();
+    this.innerHTML = this.render();
+  }
 
-        this.innerHTML = this.render();
-    }
-
-    render() {
-        return `
-        <style>@import "./assets/styles/nav.css"</style>
+  render() {
+    return `<style>@import "./assets/styles/nav.css"</style>
         <nav class="maNav">
         <a href="/" class="logo" target="spa"
           ><img src="./assets/img/home/logoAccueil.png" alt="image d'Accueil"
@@ -27,8 +25,7 @@ export default class NavbarComponent extends HTMLElement {
           <a href="/login" class="navAnimation" target="spa">Connexion</a>
         </div>
       </nav>
-      `
-    }
+    `;
+  }
 }
-
 customElements.define("navbar-component", NavbarComponent);

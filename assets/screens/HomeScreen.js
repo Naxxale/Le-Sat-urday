@@ -1,10 +1,10 @@
 import Screen from "./Screen.js";
 
 export default class HomeScreen extends Screen {
-
-
+  
   render() {
     return `<style>@import "./assets/styles/nav.css"</style>
+    <style>@import "./assets/styles/footer.css"</style>
     <style>@import "./assets/styles/index.css"</style>
     <header>
     <navbar-component/>
@@ -43,7 +43,7 @@ export default class HomeScreen extends Screen {
           <h3 class="underline">Menu Semaine</h3>
         </div>
       </div>
-      <button class="button"><a href="/menu" target="spa">En savoir plus</a></button>
+      <button class="button">En savoir plus</button>
       <div class="book">
         <div class="listeMenu">
           <h3>Titre</h3>
@@ -70,17 +70,17 @@ export default class HomeScreen extends Screen {
         <p>
           Découvrez le lieu et les personnes qui vous offrent ce bohneur inouï !
         </p>
-        <button class="button"><a href="/about-us" target="spa">En savoir plus</a></button>
+        <button class="button">En savoir plus</button>
       </div>
     </div>
     <div class="horizontal-line"></div>
     <div class="registration">
       <h2 class="underline">Réservez dès maintenant !</h2>
-      <button class="button"><a href="/reservation" target="spa">Je réserve</a></button>
+      <button class="button">Je réserve !</button>
     </div>
     <footer>
-    <footer-component/>
-    </footer>`;
+  <footer-component/>
+  </footer>`;
   }
 }
 customElements.define("home-screen", HomeScreen);

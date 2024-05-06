@@ -2,11 +2,11 @@ import Screen from "./Screen.js";
 
 export default class LoginScreen extends Screen {
   
-   
   render() {
     return `
-    <style>@import "./assets/styles/login.css"</style>
     <style>@import "./assets/styles/nav.css"</style>
+    <style>@import "./assets/styles/login.css"</style>
+    <style>@import "./assets/styles/footer.css"</style>
     <header>
     <navbar-component/>
     </header>

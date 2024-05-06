@@ -1,13 +1,13 @@
 export default class FooterComponent extends HTMLElement {
-    constructor() {
-        super();
 
+    constructor(){
+        super();
         this.innerHTML = this.render();
     }
 
-    render() {
-        return `
-        <footer>
+    render(){
+        return `<style>@import "./assets/styles/footer.css"</style>
+        <hr/>
         <div class="container text-light text-center">
           <p class="display-5 mb-3 fw-bold text-secondary">Suivez nous sur les réseaux !</p>
           <div class="container mb-3 icon-area">
@@ -21,14 +21,9 @@ export default class FooterComponent extends HTMLElement {
               ><i class="bi bi-instagram h1"></i
             ></a>
           </div>
-          <small class="text-secondary">made with love by Antoine C, Solenee, Théo </small>
+          <small class="text-secondary">made with love by Théo le dozo, Solen a la cantine et Antoine C le troll</small>
         </div>
-      </footer>
-      `
+      `;
     }
 }
-
 customElements.define("footer-component", FooterComponent);
-
-
-

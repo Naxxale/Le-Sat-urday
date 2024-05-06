@@ -1,9 +1,9 @@
 import Screen from "./Screen.js";
 
 export default class AboutScreen extends Screen {
-
   render() {
     return `<style>@import "./assets/styles/nav.css"</style>
+    <style>@import "./assets/styles/footer.css"</style>
     <style>@import "./assets/styles/about-us.css"</style>
     <header>
     <navbar-component/>
@@ -174,7 +174,7 @@ export default class AboutScreen extends Screen {
     </div>
   </div>
   <footer>
-    <footer-component/>
+  <footer-component/>
   </footer>`;
   }
 }
