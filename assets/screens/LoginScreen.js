@@ -7,6 +7,9 @@ export default class LoginScreen extends Screen {
     return `
     <style>@import "./assets/styles/login.css"</style>
     <style>@import "./assets/styles/nav.css"</style>
+    <header>
+    <navbar-component/>
+    </header>
     <div class="wrapper">
     <div class="card-switch">
         <label class="switch">
