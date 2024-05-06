@@ -43,7 +43,7 @@ export default class HomeScreen extends Screen {
           <h3 class="underline">Menu Semaine</h3>
         </div>
       </div>
-      <button class="button">En savoir plus</button>
+      <button class="button"><a href="/menu" target="spa">En savoir plus</a></button>
       <div class="book">
         <div class="listeMenu">
           <h3>Titre</h3>
@@ -70,13 +70,13 @@ export default class HomeScreen extends Screen {
         <p>
           Découvrez le lieu et les personnes qui vous offrent ce bohneur inouï !
         </p>
-        <button class="button">En savoir plus</button>
+        <button class="button"><a href="/about-us" target="spa">En savoir plus</a></button>
       </div>
     </div>
     <div class="horizontal-line"></div>
     <div class="registration">
       <h2 class="underline">Réservez dès maintenant !</h2>
-      <button class="button">Je réserve !</button>
+      <button class="button"><a href="/reservation" target="spa">En savoir plus</a></button>
     </div>
     <footer>
   <footer-component/>
