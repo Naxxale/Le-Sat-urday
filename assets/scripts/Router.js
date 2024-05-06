@@ -28,17 +28,17 @@ export default class Router {
   };
 
   navigate = (e) => {
-    if (location.pathname == "/" || location.pathname == "/index.html") {
+    if (location.pathname == "/" || location.pathname == "/index") {
       this.#screen = new HomeScreen();
-    } else if (location.pathname == "/login.html") {
+    } else if (location.pathname == "/login") {
       this.#screen = new LoginScreen();
-    } else if (location.pathname == "/menu.html") {
+    } else if (location.pathname == "/menu") {
       this.#screen = new Menuscreen();
-    } else if (location.pathname == "/samedi.html") {
+    } else if (location.pathname == "/samedi") {
       this.#screen = new SamediScreen();
-    } else if (location.pathname == "/reservation.html") {
+    } else if (location.pathname == "/reservation") {
       this.#screen = new BookingScreen();
-    } else if (location.pathname == "/about-us.html") {
+    } else if (location.pathname == "/about-us") {
       this.#screen = new AboutScreen();
     } else {
       this.#screen = new NotfoundScreen();

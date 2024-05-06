@@ -1,12 +1,10 @@
-export default class AboutScreen extends HTMLElement {
-  constructor() {
-    super();
-
-    this.innerHTML = this.render();
-  }
+import Screen from "./Screen.js"
+export default class AboutScreen extends Screen {
   render() {
-    return `<style>@import "./assets/styles/nav.css"</style>
+    return `
+    <style>@import "./assets/styles/nav.css"</style>
     <style>@import "./assets/styles/about-us.css"</style>
+    <header><navbar-component/></header>
     <div class="container-fluid">
     <h1 class="display-3 fw-bold mb-3 text-center">A propos de nous !</h1>
     <p class="lead mb-0 text-center">
@@ -172,18 +170,8 @@ export default class AboutScreen extends HTMLElement {
       </div>
     </div>
   </div>
-<footer class="py-5 mt-5">
-  <hr>
-  <div class="container text-light text-center">
-    <p class="display-5 mb-3 fw-bold">Suivez nous sur les réseaux !</p>
-    <div class="container mb-3 icon-area">
-    <a href="https://www.facebook.com/" class="social-logo m-3"><i class="bi bi-facebook h1"></i></a>
-    <a href="https://www.tiktok.com/" class="social-logo m-3 "><i class="bi bi-tiktok h1"></i></a>
-    <a href="https://www.instagram.com/" class="social-logo m-3"><i class="bi bi-instagram h1"></i></a>
-    </div>
-    <small>made with love by Antoine C</small>
-  </div>
-</footer>`;
+  <footer><footer-component/></footer>
+`;
   }
 }
 customElements.define("about-screen", AboutScreen);

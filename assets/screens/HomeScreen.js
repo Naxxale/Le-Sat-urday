@@ -1,12 +1,11 @@
-export default class HomeScreen extends HTMLElement {
-  constructor() {
-    super();
+import Screen from "./Screen.js"
+export default class HomeScreen extends Screen {
 
-    this.innerHTML = this.render();
-  }
   render() {
-    return `<style>@import "./assets/styles/nav.css"</style>
+    return `
+    <style>@import "./assets/styles/nav.css"</style>
     <style>@import "./assets/styles/index.css"</style>
+    <header><navbar-component/></header>
     <div class="horizontal-line-nav"></div>
     <div class="firstContent">
       <img src="./assets/img/home/firstBackground.jpg" alt="" />
@@ -76,24 +75,8 @@ export default class HomeScreen extends HTMLElement {
       <h2 class="underline">Réservez dès maintenant !</h2>
       <button class="button">Je réserve !</button>
     </div>
-    <footer class="py-5 mt-5">
-      <hr />
-      <div class="container text-light text-center">
-        <p class="display-5 mb-3 fw-bold">Suivez nous sur les réseaux !</p>
-        <div class="container mb-3 icon-area">
-          <a href="https://www.facebook.com/" class="social-logo m-3"
-            ><i class="bi bi-facebook h1"></i
-          ></a>
-          <a href="https://www.tiktok.com/" class="social-logo m-3"
-            ><i class="bi bi-tiktok h1"></i
-          ></a>
-          <a href="https://www.instagram.com/" class="social-logo m-3"
-            ><i class="bi bi-instagram h1"></i
-          ></a>
-        </div>
-        <small>made with love by Théo le dozo</small>
-      </div>
-    </footer>`;
+    <footer><footer-component/></footer>
+    `;
   }
 }
 customElements.define("home-screen", HomeScreen);

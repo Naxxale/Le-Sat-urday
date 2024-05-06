@@ -1,12 +1,11 @@
-export default class BookingScreen extends HTMLElement {
-  constructor() {
-    super();
+import Screen from "./Screen.js"
+export default class BookingScreen extends Screen {
 
-    this.innerHTML = this.render();
-  }
 
   render() {
-    return `<style>@import "./assets/styles/nav.css"</style>
+    return `
+    <style>@import "./assets/styles/nav.css"</style>
+    <header><navbar-component/></header>
         <!--Formulaire de reservation-->
         <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center flex-column" style = "background-image: url('assets/img/Resa/bgResa.jpeg');">
         <h2 class ="text-center text-white mb-4">Formulaire de Réservation</h2>
@@ -46,12 +45,7 @@ export default class BookingScreen extends HTMLElement {
             </form>
         </div>
     </div>
-    <!--Footer-->
-        <div class="container-fluid bg-secondary d-flex justify-content-around">
-          <p style ="color:white">Termes et conditions</p>
-          <p style="color:white">Mentions légales</p>
-          <p style="color:white"> <i class="bi bi-c-circle"></i> 2024 par SAT'URDAY</p>
-        </div>
+    <footer><footer-component/></footer>
         `
   }
 }
