@@ -13,15 +13,25 @@
   </head>
   <body>
     <header>
-      <nav>
-        <a href="/index.html" target="spa">Home</a>
-        <a href="/menu.html" target="spa">Menu</a>
-        <a href="/reservation.html" target="spa">Reservation</a>
-        <a href="/samedi.html" target="spa">Le samedi</a>
-        <a href="/about-us.html" target="spa">A propos</a>
-        <a href="/login.html" target="spa">Login</a>
+      <nav class="maNav">
+        <a href="/" class="logo" target="spa"
+          ><img src="./assets/img/home/logoAccueil.png" alt="image d'Accueil"
+        /></a>
+        <div class="middleNav">
+          <a href="/menu.html" class="navAnimation" target="spa">Menu</a>
+          <a href="/reservation.html" class="navAnimation" target="spa"
+            >Réservation</a
+          >
+          <a href="/samedi.html" class="navAnimation" target="spa">Sat'urday</a>
+          <a href="/about-us.html" class="navAnimation" target="spa"
+            >A propos</a
+          >
+        </div>
+        <div class="logIn">
+          <box-icon name="log-in" color="#627750"></box-icon>
+          <a href="/login.html" class="navAnimation" target="spa">Connexion</a>
+        </div>
       </nav>
-      <br /><br /><br /><br /><br />
     </header>
     <main>
       <div id="app"></div>
@@ -32,6 +42,7 @@
       crossorigin="anonymous"
     ></script>
     <script type="module" src="/assets/scripts/index.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();

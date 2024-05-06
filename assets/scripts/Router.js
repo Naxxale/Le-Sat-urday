@@ -28,7 +28,7 @@ export default class Router {
   };
 
   navigate = (e) => {
-    if (location.pathname == "/" || location.pathname == "/home") {
+    if (location.pathname == "/" || location.pathname == "/index.html") {
       this.#screen = new HomeScreen();
     } else if (location.pathname == "/login.html") {
       this.#screen = new LoginScreen();
@@ -36,7 +36,7 @@ export default class Router {
       this.#screen = new Menuscreen();
     } else if (location.pathname == "/samedi.html") {
       this.#screen = new SamediScreen();
-    } else if (location.pathname == "/booking.html") {
+    } else if (location.pathname == "/reservation.html") {
       this.#screen = new BookingScreen();
     } else if (location.pathname == "/about-us.html") {
       this.#screen = new AboutScreen();
