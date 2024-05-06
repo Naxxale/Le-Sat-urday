@@ -1,9 +1,8 @@
-export default class SamediScreen extends HTMLElement {
-  constructor() {
-    super();
+import Screen from "./Screen.js";
 
-    this.innerHTML = this.render();
-  }
+export default class SamediScreen extends Screen {
+  
+  
   render() {
     return `<style>@import "./assets/styles/nav.css"</style>
     <div class="container-fluid" style = "background-image: url('assets/img/menu/bg.jpeg');">

@@ -1,9 +1,7 @@
-export default class Menuscreen extends HTMLElement {
-  constructor() {
-    super();
+import Screen from "./Screen.js";
 
-    this.innerHTML = this.render();
-  }
+export default class Menuscreen extends Screen {
+  
 
   render() {
     return `<style>@import "./assets/styles/nav.css"</style>
