@@ -27,7 +27,11 @@ export default class BookingScreen extends Screen {
                 <div class="mb-3">
                     <label for="bookingDate" class="form-label text-secondary">Sélectionnez une date de réservation</label>
                     <input type="date" class="form-control" id="exampleInputDate1" aria-describedby="date">
-                    <div id="emailHelp" class="form-text"></div>
+                    <div id="bookingDate" class="form-text"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="timepicker-sm">Choisissez votre heure de réservation</label>
+                    <input type="time" class="form-control" value="" />
                 </div>
                 <select class="form-select" aria-label="numberOfPeople">
                     <option selected>Pour combien de personnes ?</option>

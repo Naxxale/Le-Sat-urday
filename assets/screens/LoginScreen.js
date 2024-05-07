@@ -1,6 +1,35 @@
 import Screen from "./Screen.js";
 
 export default class LoginScreen extends Screen {
+
+   constructor(){
+      super();
+      this.querySelector("form").onsubmit = this.handleLoginFormSubmit;
+      this.querySelector("#form-signIn").onsubmit = this.handleLoginFormSubmit;
+      
+  }
+
+   handleLoginFormSubmit = (e) => {
+      e.preventDefault();
+      const entries = Object.fromEntries(new FormData(e.target));
+      console.log(entries);
+      // const account = new Account(entries);
+      
+      const validPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,15}$/;
+      const isValidPassword = validPassword.test(entries.password);
+      console.log(isValidPassword);
+
+     if(!isValidPassword){
+         e.target.querySelector("#password-error").textContent = "le mot de passe est invalide";
+      };
+
+      
+
+      // if(account.hasValidData()){
+      //     //envoi des données vers le backend
+      // }
+   }
+
   
   render() {
     return `
@@ -20,7 +49,7 @@ export default class LoginScreen extends Screen {
                <div class="flip-card__inner">
                   <div class="flip-card__front">
                      <div class="title">Connexion</div>
-                     <form class="flip-card__form" action="">
+                     <form class="flip-card__form" action="" >
                         <input class="flip-card__input" name="email" placeholder="Email" type="email">
                         <input class="flip-card__input" name="password" placeholder="Mot de passe" type="password">
                         <button class="flip-card__btn">A Table !</button>
@@ -28,10 +57,11 @@ export default class LoginScreen extends Screen {
                   </div>
                   <div class="flip-card__back">
                      <div class="title">S'enregistrer</div>
-                     <form class="flip-card__form" action="">
-                        <input class="flip-card__input" placeholder="Nom" type="name">
-                        <input class="flip-card__input" name="email" placeholder="Email" type="email">
-                        <input class="flip-card__input" name="Mot de" placeholder="Mot de passe" type="password">
+                     <form class="flip-card__form" action="" id="form-signIn">
+                        <input class="flip-card__input" name="name" placeholder="Nom" type="name">
+                        <input class="flip-card__input" name="email" placeholder="Email" type="email" id="password-signUp">
+                        <input class="flip-card__input" name="password" placeholder="Mot de passe" type="password">
+                        <label id="password-error"></label>
                         <button class="flip-card__btn">A Table !</button>
                      </form>
                   </div>
