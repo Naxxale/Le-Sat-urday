@@ -33,6 +33,10 @@ export default class BookingScreen extends Screen {
                     <label for="timepicker-sm">Choisissez votre heure de réservation</label>
                     <input type="time" class="form-control" value="" />
                 </div>
+                <div class="mb-3">
+                <label for="timepicker-sm">Choisissez votre heure de réservation</label>
+                <input type="time" class="form-control" value=""/>
+                </div>
                 <select class="form-select" aria-label="numberOfPeople">
                     <option selected>Pour combien de personnes ?</option>
                     <option value="1">1</option>
