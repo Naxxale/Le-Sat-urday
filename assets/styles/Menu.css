@@ -1,0 +1,21 @@
+@media screen and (max-width :800px){
+    #separation{
+        display : block;
+    }
+
+    #leftPart{
+        width : 100%;
+        border-width: 0px!important;
+    }
+
+    #rightPart{
+        width : 100%;
+        border-width: 0px!important;
+    }
+
+    .couverts{
+        display: none;
+    }
+
+}
+
