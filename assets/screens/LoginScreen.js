@@ -1,3 +1,4 @@
+import Account from "../models/Account.js";
 import Screen from "./Screen.js";
 
 export default class LoginScreen extends Screen {
@@ -11,18 +12,15 @@ export default class LoginScreen extends Screen {
    handleLoginFormSubmit = (e) => {
       e.preventDefault();
       const entries = Object.fromEntries(new FormData(e.target));
-      console.log(entries);
-
       const password = entries["password"];
       const regex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{6,15}$/;
       if (!regex.test(password)) {
          console.log("Mdp invalide");
          return;
       }
-      console.log("Mdp valide");
-      console.log(entries);
-   }
-
+      const newAccount = new Account(entries);
+      console.log(newAccount);
+   };
 
    render() {
       return `
