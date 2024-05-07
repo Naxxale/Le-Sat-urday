@@ -1,31 +1,30 @@
+import Account from "../models/Account.js";
 import Screen from "./Screen.js";
 
 export default class LoginScreen extends Screen {
+  constructor() {
+    super();
+    this.querySelector("#form-signIn").onsubmit = this.handleLoginFormSubmit;
+    this.querySelector("form").onsubmit = this.handleLoginFormSubmit;
+  }
 
-   constructor(){
-      super();
-      this.querySelector('#form-signIn').onsubmit = this.handleLoginFormSubmit;
-      this.querySelector("form").onsubmit = this.handleLoginFormSubmit;
-   }
+  handleLoginFormSubmit = (e) => {
+    e.preventDefault();
+    const entries = Object.fromEntries(new FormData(e.target));
+    const password = entries["password"];
+    const regex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{6,15}$/;
+    if (!regex.test(password)) {
+      alert(
+        "Attention mot de passe invalide veuillez saisir un mot de passe fort"
+      );
+      return;
+    }
+    const newAccount = new Account(entries);
+    console.log(newAccount);
+  };
 
-   handleLoginFormSubmit = (e) => {
-      e.preventDefault();
-      const entries = Object.fromEntries(new FormData(e.target));
-      console.log(entries);
-
-      const password = entries["password"];
-      const regex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{6,15}$/;
-      if (!regex.test(password)) {
-         console.log("Mdp invalide");
-         return;
-      }
-      console.log("Mdp valide");
-      console.log(entries);
-   }
-
-
-   render() {
-      return `
+  render() {
+    return `
       <style>@import "./assets/styles/nav.css"</style>
       <style>@import "./assets/styles/login.css"</style>
       <style>@import "./assets/styles/footer.css"</style>
