@@ -9,7 +9,8 @@ export default class BookingScreen extends Screen {
     <navbar-component/>
     </header>
         <!--Formulaire de reservation-->
-        <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center flex-column" style = "background-image: url('assets/img/Resa/bgResa.jpeg');">
+        <div class="container-fluid min-vh-100
+         d-flex align-items-center justify-content-center flex-column" style = "background-image: url('assets/img/Resa/bgResa.jpeg');">
         <h2 class ="text-center text-white mb-4">Formulaire de Réservation</h2>
         <div class ="container min-vh-60 bg-primary pt-3 rounded">
             <form>
@@ -27,6 +28,10 @@ export default class BookingScreen extends Screen {
                     <label for="bookingDate" class="form-label text-secondary">Sélectionnez une date de réservation</label>
                     <input type="date" class="form-control" id="exampleInputDate1" aria-describedby="date">
                     <div id="emailHelp" class="form-text"></div>
+                </div>
+                <div class="mb-3">
+                <label for="timepicker-sm">Choisissez votre heure de réservation</label>
+                <input type="time" class="form-control" value=""/>
                 </div>
                 <select class="form-select" aria-label="numberOfPeople">
                     <option selected>Pour combien de personnes ?</option>
