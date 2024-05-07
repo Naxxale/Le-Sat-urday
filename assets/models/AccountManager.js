@@ -1,13 +1,12 @@
 import Account from "./Account.js";
 
-export default class AccountManager extends Account {
+export default class AccountManager extends Account{
     constructor(){
         super();
-        this.account = [];
+        this.accounts = [];
     }
 
-    addAcount(){
+    addAccount(){
         
     }
-
 }

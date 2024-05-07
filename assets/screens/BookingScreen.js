@@ -4,24 +4,15 @@ export default class BookingScreen extends Screen {
 
     constructor(){
         super();
+
         this.querySelector('form').onsubmit = this.handleBookingFormSubmit;
-      }
-  
-      handleBookingFormSubmit = (e) => {
-         e.preventDefault();
-         const entries = Object.fromEntries(new FormData(e.target));
-         console.log(entries);
-  
-    //     const password = entries["password"];
-    //     const regex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{6,15}$/;
-    //     if (!regex.test(password)) {
-    //        console.log("Mdp invalide");
-    //        return;
-    //     }
-    //     console.log("Mdp valide");
-    //     console.log(entries);
     }
-  
+
+    handleBookingFormSubmit = (e) => {
+        e.preventDefault();
+        const entries = Object.fromEntries(new FormData(e.target));
+        console.log(entries);
+    }
 
   render() {
     return `<style>@import "./assets/styles/nav.css"</style>
@@ -37,24 +28,24 @@ export default class BookingScreen extends Screen {
             <form>
                 <div class="mb-3">
                 <label for="clientName" class="form-label text-secondary">Votre nom</label>
-                <input type="text" class="form-control" aria-describedby="name" name="nom">
-                <div id="" class="form-text"></div>
+                <input type="text" class="form-control" aria-describedby="name" name="Nom">
+                <div id="clientName" class="form-text"></div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label text-secondary">Votre adresse Email</label>
-                    <input type="email" class="form-control" aria-describedby="email" name="email">
-                    <div class="form-text"></div>
+                    <input type="email" class="form-control" aria-describedby="email" name="Email">
+                    <div id="emailHelp" class="form-text"></div>
                 </div>
                 <div class="mb-3">
                     <label for="bookingDate" class="form-label text-secondary">Sélectionnez une date de réservation</label>
-                    <input type="date" class="form-control" aria-describedby="date" name="date">
-                    <div class="form-text"></div>
+                    <input type="date" class="form-control" aria-describedby="date" name="Date">
+                    <div id="emailHelp" class="form-text"></div>
                 </div>
                 <div class="mb-3">
-                    <label for="timepicker-sm">Choisissez votre heure de réservation</label>
-                    <input type="time" class="form-control" value="" name="time">
+                <label for="timepicker-sm">Choisissez votre heure de réservation</label>
+                <input type="time" class="form-control" value="" name="Time"/>
                 </div>
-                <select class="form-select" aria-label="numberOfPeople" name="pers">
+                <select class="form-select" aria-label="numberOfPeople" name="Pers">
                     <option selected>Pour combien de personnes ?</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
