@@ -1,25 +1,38 @@
 import Account from "../models/Account.js";
+import AccountService from "../services/AccountService.js";
 import Screen from "./Screen.js";
 
 export default class LoginScreen extends Screen {
 
    constructor(){
       super();
-      this.querySelector('#form-signIn').onsubmit = this.handleLoginFormSubmit;
+      this.querySelector('#form-signIn').onsubmit = this.handleRegisterFormSubmit;
       this.querySelector("form").onsubmit = this.handleLoginFormSubmit;
    }
 
-   handleLoginFormSubmit = (e) => {
+   handleRegisterFormSubmit = (e) => {
       e.preventDefault();
       const entries = Object.fromEntries(new FormData(e.target));
       const password = entries["password"];
       const regex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{6,15}$/;
       if (!regex.test(password)) {
          console.log("Mdp invalide");
+      }
+      const existingAccounts = JSON.parse(localStorage.getItem("accounts")) || [];
+      if (existingAccounts.some((account) => account.email === entries.email)) {
+         alert ("L'Adresse mail existe déjà !");
          return;
       }
-      const newAccount = new Account(entries);
+      const newAccount = new AccountService(entries); 
+      newAccount.create(entries);
       console.log(newAccount);
+   };
+
+   handleLoginFormSubmit = (e) => {
+      e.preventDefault();
+      const entries = Object.fromEntries(new FormData(e.target));
+      const account = new AccountService().read(item => item.email == entries.email);
+      console.log(account);
    };
 
    render() {
@@ -41,7 +54,7 @@ export default class LoginScreen extends Screen {
                      <div class="title">Connexion</div>
                      <form class="flip-card__form" action="">
                         <input class="flip-card__input" name="email" placeholder="Email" type="email">
-                        <input class="flip-card__input" name="password" placeholder="Mot de passe" type="password">
+                        <input class="flip-card__input" name="LoginPassword" placeholder="Mot de passe" type="password">
                         <button class="flip-card__btn">A Table !</button>
                      </form>
                   </div>

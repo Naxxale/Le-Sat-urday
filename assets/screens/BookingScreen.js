@@ -1,19 +1,28 @@
 import Screen from "./Screen.js";
+import BookingService from "../services/BookingServices.js";
 
 export default class BookingScreen extends Screen {
+  constructor() {
+    super();
 
-    constructor(){
-        super();
-        this.querySelector("form").onsubmit = this.handleBookingFormSubmit;
+    this.querySelector("form").onsubmit = this.handleBookingFormSubmit;
+  }
 
-     }
-
-     handleBookingFormSubmit = (e) => {
-        e.preventDefault();
-        const entries = Object.fromEntries(new FormData(e.target));
-        console.log(entries);
+  handleBookingFormSubmit = (e) => {
+    e.preventDefault();
+    const entries = Object.fromEntries(new FormData(e.target));
+    const existingBooking = JSON.parse(localStorage.getItem("books")) || [];
+    if (
+      existingBooking.some((books) => books.email === entries.email) &&
+      existingBooking.some((books) => books.names === entries.name)
+    ) {
+      alert("Vous avez déjà reserver!");
+      return;
     }
-     
+    const newBookingService = new BookingService();
+    newBookingService.create(entries);
+    console.log(newBookingService);
+  };
 
   render() {
     return `<style>@import "./assets/styles/nav.css"</style>
@@ -29,24 +38,24 @@ export default class BookingScreen extends Screen {
             <form>
                 <div class="mb-3">
                 <label for="clientName" class="form-label text-secondary">Votre nom</label>
-                <input type="text" class="form-control" name="Nom " aria-describedby="name">
+                <input type="text" class="form-control" name="name " aria-describedby="name">
                 <div id="clientName" class="form-text"></div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label text-secondary">Votre adresse Email</label>
-                    <input type="email" class="form-control" name="Email " aria-describedby="email">
+                    <input type="email" class="form-control" name="email " aria-describedby="email">
                     <div id="emailHelp" class="form-text"></div>
                 </div>
                 <div class="mb-3">
                     <label for="bookingDate" class="form-label text-secondary">Sélectionnez une date de réservation</label>
-                    <input type="date" class="form-control" name="Date " aria-describedby="date">
+                    <input type="date" class="form-control" name="date " aria-describedby="date">
                     <div id="emailHelp" class="form-text"></div>
                 </div>
                 <div class="mb-3">
                 <label for="timepicker-sm">Choisissez votre heure de réservation</label>
-                <input type="time" name="Heure" class="form-control" value=""/>
+                <input type="time" name="time" class="form-control" value=""/>
                 </div>
-                <select class="form-select" name="Pers " aria-label="numberOfPeople">
+                <select class="form-select" name="pers " aria-label="numberOfPeople">
                     <option selected>Pour combien de personnes ?</option>
                     <option value="1">1</option>
                     <option value="2">2</option>

@@ -1,8 +1,11 @@
 export default class Account {
 
+    static #_nextId = 0;
+
     constructor(props) {
-        const {name, email, password} = props;
-        this.name = name;
+        const {id, names, email, password} = props;
+        this.id = id || ++Account.#_nextId;
+        this.name = names;
         this.email = email;
         this.password = password;
     }
