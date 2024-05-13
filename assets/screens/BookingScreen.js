@@ -1,3 +1,4 @@
+import BookingService from "../services/BookingService.js";
 import Screen from "./Screen.js";
 
 export default class BookingScreen extends Screen {
@@ -11,8 +12,15 @@ export default class BookingScreen extends Screen {
     handleBookingFormSubmit = (e) => {
         e.preventDefault();
         const entries = Object.fromEntries(new FormData(e.target));
-        console.log(entries);
-    }
+        const existingBooking = JSON.parse(localStorage.getItem("books")) || [];
+        if (existingBooking.some((books) => books.email === entries.email) && existingBooking.some((books) => books.names === entries.name)){
+            alert("Réservation déjà existante avec le nom et l'email.");
+            return;
+        }
+        const newBookingService = new BookingService();
+        newBookingService.create(entries);
+        console.log(newBookingService);
+    };
 
   render() {
     return `<style>@import "./assets/styles/nav.css"</style>
