@@ -65,7 +65,7 @@ export default class LoginScreen extends Screen {
                   <div class="flip-card__back">
                      <div class="title">S'enregistrer</div>
                      <form class="flip-card__form" action="" id="form-signIn">
-                        <input class="flip-card__input" placeholder="Nom" name="name" type="name">
+                        <input class="flip-card__input" placeholder="Nom" name="names" type="name">
                         <input class="flip-card__input" name="email" placeholder="Email" type="email">
                         <input class="flip-card__input" name="password" placeholder="Mot de passe" minlength="6" maxlength="15" type="password">
                         <button class="flip-card__btn">A Table !</button>
