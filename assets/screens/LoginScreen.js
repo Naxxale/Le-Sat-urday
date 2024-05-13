@@ -1,6 +1,5 @@
-import AccountService from "../services/AccountService.js";
 import Account from "../models/Account.js";
-
+import AccountService from "../services/AccountServices.js";
 import Screen from "./Screen.js";
 
 export default class LoginScreen extends Screen {
@@ -8,37 +7,37 @@ export default class LoginScreen extends Screen {
     super();
     this.querySelector("#form-signIn").onsubmit = this.handleRegisterFormSubmit;
     this.querySelector("form").onsubmit = this.handleLoginFormSubmit;
-   }
+  }
 
-  //CONNEXION
   handleLoginFormSubmit = (e) => {
     e.preventDefault();
     const entries = Object.fromEntries(new FormData(e.target));
-    const account = new AccountService().read(item => item.email == entries.email);
-    console.log(account); 
+    const account = new AccountService().read(
+      (item) => item.email == entries.email
+    );
+    console.log(account);
   };
 
-   //INSCRIPTION
-   handleRegisterFormSubmit = (e) => {
-      e.preventDefault();
-      const entries = Object.fromEntries(new FormData(e.target));
-      const password = entries["password"];
-      const regex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{6,15}$/;
-      if (!regex.test(password)) {
-        alert(
-          "Attention mot de passe invalide veuillez saisir un mot de passe fort"
-        );
+  handleRegisterFormSubmit = (e) => {
+    e.preventDefault();
+    const entries = Object.fromEntries(new FormData(e.target));
+    const password = entries["password"];
+    const regex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{6,15}$/;
+    if (!regex.test(password)) {
+      alert(
+        "Attention mot de passe invalide veuillez saisir un mot de passe fort"
+      );
       return;
-      }
-      const existingAccounts = JSON.parse(localStorage.getItem("accounts")) || [];
-      if (existingAccounts.some((account) => account.email === entries.email)){
-         alert("L'adresse mail existe déjà ! ");
-         return ; 
-      }
-   const newAccount = new AccountService();
-   newAccount.create(entries)
-   console.log(newAccount);
-};
+    }
+    const existingAccounts = JSON.parse(localStorage.getItem("accounts")) || [];
+    if (existingAccounts.some((account) => account.email === entries.email)) {
+      alert("L'adresse mail existe déjà !");
+      return;
+    }
+    const newAccountService = new AccountService();
+    newAccountService.create(entries);
+    console.log(newAccountService);
+  };
 
   render() {
     return `

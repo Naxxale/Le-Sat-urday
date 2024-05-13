@@ -1,26 +1,28 @@
-import BookingService from "../services/BookingService.js";
 import Screen from "./Screen.js";
+import BookingService from "../services/BookingServices.js";
 
 export default class BookingScreen extends Screen {
+  constructor() {
+    super();
 
-    constructor(){
-        super();
+    this.querySelector("form").onsubmit = this.handleBookingFormSubmit;
+  }
 
-        this.querySelector('form').onsubmit = this.handleBookingFormSubmit;
+  handleBookingFormSubmit = (e) => {
+    e.preventDefault();
+    const entries = Object.fromEntries(new FormData(e.target));
+    const existingBooking = JSON.parse(localStorage.getItem("books")) || [];
+    if (
+      existingBooking.some((books) => books.email === entries.email) &&
+      existingBooking.some((books) => books.names === entries.name)
+    ) {
+      alert("Vous avez déjà reserver!");
+      return;
     }
-
-    handleBookingFormSubmit = (e) => {
-        e.preventDefault();
-        const entries = Object.fromEntries(new FormData(e.target));
-        const existingBooking = JSON.parse(localStorage.getItem("books")) || [];
-        if (existingBooking.some((books) => books.email === entries.email) && existingBooking.some((books) => books.names === entries.name)){
-            alert("Réservation déjà existante avec le nom et l'email.");
-            return;
-        }
-        const newBookingService = new BookingService();
-        newBookingService.create(entries);
-        console.log(newBookingService);
-    };
+    const newBookingService = new BookingService();
+    newBookingService.create(entries);
+    console.log(newBookingService);
+  };
 
   render() {
     return `<style>@import "./assets/styles/nav.css"</style>
@@ -36,24 +38,24 @@ export default class BookingScreen extends Screen {
             <form>
                 <div class="mb-3">
                 <label for="clientName" class="form-label text-secondary">Votre nom</label>
-                <input type="text" class="form-control" aria-describedby="name" name="Nom">
+                <input type="text" class="form-control" aria-describedby="name" name="name">
                 <div id="clientName" class="form-text"></div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label text-secondary">Votre adresse Email</label>
-                    <input type="email" class="form-control" aria-describedby="email" name="Email">
+                    <input type="email" class="form-control" aria-describedby="email" name="email">
                     <div id="emailHelp" class="form-text"></div>
                 </div>
                 <div class="mb-3">
                     <label for="bookingDate" class="form-label text-secondary">Sélectionnez une date de réservation</label>
-                    <input type="date" class="form-control" aria-describedby="date" name="Date">
+                    <input type="date" class="form-control" aria-describedby="date" name="date">
                     <div id="emailHelp" class="form-text"></div>
                 </div>
                 <div class="mb-3">
                 <label for="timepicker-sm">Choisissez votre heure de réservation</label>
-                <input type="time" class="form-control" value="" name="Time"/>
+                <input type="time" class="form-control" value="" name="time"/>
                 </div>
-                <select class="form-select" aria-label="numberOfPeople" name="Pers">
+                <select class="form-select" aria-label="numberOfPeople" name="pers">
                     <option selected>Pour combien de personnes ?</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -74,7 +76,7 @@ export default class BookingScreen extends Screen {
     </div>
     <footer>
   <footer-component/>
-  </footer>`
+  </footer>`;
   }
 }
 customElements.define("booking-screen", BookingScreen);
