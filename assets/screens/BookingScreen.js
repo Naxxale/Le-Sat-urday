@@ -38,24 +38,24 @@ export default class BookingScreen extends Screen {
             <form>
                 <div class="mb-3">
                 <label for="clientName" class="form-label text-secondary">Votre nom</label>
-                <input type="text" class="form-control" name="name " aria-describedby="name">
+                <input type="text" class="form-control" aria-describedby="name" name="name">
                 <div id="clientName" class="form-text"></div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label text-secondary">Votre adresse Email</label>
-                    <input type="email" class="form-control" name="email " aria-describedby="email">
+                    <input type="email" class="form-control" aria-describedby="email" name="email">
                     <div id="emailHelp" class="form-text"></div>
                 </div>
                 <div class="mb-3">
                     <label for="bookingDate" class="form-label text-secondary">Sélectionnez une date de réservation</label>
-                    <input type="date" class="form-control" name="date " aria-describedby="date">
+                    <input type="date" class="form-control" aria-describedby="date" name="date">
                     <div id="emailHelp" class="form-text"></div>
                 </div>
                 <div class="mb-3">
                 <label for="timepicker-sm">Choisissez votre heure de réservation</label>
-                <input type="time" name="time" class="form-control" value=""/>
+                <input type="time" class="form-control" value="" name="time"/>
                 </div>
-                <select class="form-select" name="pers " aria-label="numberOfPeople">
+                <select class="form-select" aria-label="numberOfPeople" name="pers">
                     <option selected>Pour combien de personnes ?</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -76,7 +76,7 @@ export default class BookingScreen extends Screen {
     </div>
     <footer>
   <footer-component/>
-  </footer>`
+  </footer>`;
   }
 }
 customElements.define("booking-screen", BookingScreen);

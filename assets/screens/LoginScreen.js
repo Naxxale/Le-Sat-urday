@@ -1,42 +1,46 @@
 import Account from "../models/Account.js";
-import AccountService from "../services/AccountService.js";
+import AccountService from "../services/AccountServices.js";
 import Screen from "./Screen.js";
 
 export default class LoginScreen extends Screen {
+  constructor() {
+    super();
+    this.querySelector("#form-signIn").onsubmit = this.handleRegisterFormSubmit;
+    this.querySelector("form").onsubmit = this.handleLoginFormSubmit;
+  }
 
-   constructor(){
-      super();
-      this.querySelector('#form-signIn').onsubmit = this.handleRegisterFormSubmit;
-      this.querySelector("form").onsubmit = this.handleLoginFormSubmit;
-   }
+  handleLoginFormSubmit = (e) => {
+    e.preventDefault();
+    const entries = Object.fromEntries(new FormData(e.target));
+    const account = new AccountService().read(
+      (item) => item.email == entries.email
+    );
+    console.log(account);
+  };
 
-   handleRegisterFormSubmit = (e) => {
-      e.preventDefault();
-      const entries = Object.fromEntries(new FormData(e.target));
-      const password = entries["password"];
-      const regex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{6,15}$/;
-      if (!regex.test(password)) {
-         console.log("Mdp invalide");
-      }
-      const existingAccounts = JSON.parse(localStorage.getItem("accounts")) || [];
-      if (existingAccounts.some((account) => account.email === entries.email)) {
-         alert ("L'Adresse mail existe déjà !");
-         return;
-      }
-      const newAccount = new AccountService(entries); 
-      newAccount.create(entries);
-      console.log(newAccount);
-   };
+  handleRegisterFormSubmit = (e) => {
+    e.preventDefault();
+    const entries = Object.fromEntries(new FormData(e.target));
+    const password = entries["password"];
+    const regex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{6,15}$/;
+    if (!regex.test(password)) {
+      alert(
+        "Attention mot de passe invalide veuillez saisir un mot de passe fort"
+      );
+      return;
+    }
+    const existingAccounts = JSON.parse(localStorage.getItem("accounts")) || [];
+    if (existingAccounts.some((account) => account.email === entries.email)) {
+      alert("L'adresse mail existe déjà !");
+      return;
+    }
+    const newAccountService = new AccountService();
+    newAccountService.create(entries);
+    console.log(newAccountService);
+  };
 
-   handleLoginFormSubmit = (e) => {
-      e.preventDefault();
-      const entries = Object.fromEntries(new FormData(e.target));
-      const account = new AccountService().read(item => item.email == entries.email);
-      console.log(account);
-   };
-
-   render() {
-      return `
+  render() {
+    return `
       <style>@import "./assets/styles/nav.css"</style>
       <style>@import "./assets/styles/login.css"</style>
       <style>@import "./assets/styles/footer.css"</style>
