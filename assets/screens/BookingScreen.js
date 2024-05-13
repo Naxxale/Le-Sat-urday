@@ -16,7 +16,7 @@ export default class BookingScreen extends Screen {
       existingBooking.some((books) => books.email === entries.email) &&
       existingBooking.some((books) => books.names === entries.name)
     ) {
-      alert("Vous avez déjà reserver!");
+      alert("Vous avez déjà reservé!");
       return;
     }
     const newBookingService = new BookingService();
@@ -38,7 +38,7 @@ export default class BookingScreen extends Screen {
             <form>
                 <div class="mb-3">
                 <label for="clientName" class="form-label text-secondary">Votre nom</label>
-                <input type="text" class="form-control" aria-describedby="name" name="name">
+                <input type="text" class="form-control" aria-describedby="name" name="names">
                 <div id="clientName" class="form-text"></div>
                 </div>
                 <div class="mb-3">

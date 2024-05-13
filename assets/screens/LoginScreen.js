@@ -25,7 +25,7 @@ export default class LoginScreen extends Screen {
     const regex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{6,15}$/;
     if (!regex.test(password)) {
       alert(
-        "Attention mot de passe invalide veuillez saisir un mot de passe fort"
+        "Attention mot de passe invalide, veuillez saisir un mot de passe fort"
       );
       return;
     }
