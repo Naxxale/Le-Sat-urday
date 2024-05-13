@@ -1,14 +1,24 @@
 import Account from "../models/Account.js";
+import AccountService from "../services/AccountServices.js";
 import Screen from "./Screen.js";
 
 export default class LoginScreen extends Screen {
   constructor() {
     super();
-    this.querySelector("#form-signIn").onsubmit = this.handleLoginFormSubmit;
+    this.querySelector("#form-signIn").onsubmit = this.handleRegisterFormSubmit;
     this.querySelector("form").onsubmit = this.handleLoginFormSubmit;
   }
 
   handleLoginFormSubmit = (e) => {
+    e.preventDefault();
+    const entries = Object.fromEntries(new FormData(e.target));
+    const account = new AccountService().read(
+      (item) => item.email == entries.email
+    );
+    console.log(account);
+  };
+
+  handleRegisterFormSubmit = (e) => {
     e.preventDefault();
     const entries = Object.fromEntries(new FormData(e.target));
     const password = entries["password"];
@@ -19,8 +29,14 @@ export default class LoginScreen extends Screen {
       );
       return;
     }
-    const newAccount = new Account(entries);
-    console.log(newAccount);
+    const existingAccounts = JSON.parse(localStorage.getItem("accounts")) || [];
+    if (existingAccounts.some((account) => account.email === entries.email)) {
+      alert("L'adresse mail existe déjà !");
+      return;
+    }
+    const newAccountService = new AccountService();
+    newAccountService.create(entries);
+    console.log(newAccountService);
   };
 
   render() {
@@ -42,7 +58,7 @@ export default class LoginScreen extends Screen {
                      <div class="title">Connexion</div>
                      <form class="flip-card__form" action="">
                         <input class="flip-card__input" name="email" placeholder="Email" type="email">
-                        <input class="flip-card__input" name="password" placeholder="Mot de passe" type="password">
+                        <input class="flip-card__input" name="LoginPassword" placeholder="Mot de passe" type="password">
                         <button class="flip-card__btn">A Table !</button>
                      </form>
                   </div>
