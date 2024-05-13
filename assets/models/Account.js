@@ -2,15 +2,15 @@
         
         static #_nextId = 0;
     constructor(props) {
-        const {id, names, email, password} = props;
+        const {id, name, email, password} = props;
         this.id = id || ++Account.#_nextId;
-        this.names = names;
+        this.name = name;
         this.email = email;
         this.password = password;
     }
 
     displayAccount(){
-        console.log(`username: ${this.names}, email: ${this.email}, password: ${this.password}`);
+        console.log(`username: ${this.name}, email: ${this.email}, password: ${this.password}`);
     }
 
 }
