@@ -1,5 +1,5 @@
 import Account from "../models/Account.js";
-import AccountService from "../services/AccountServices.js";
+import AccountService from "../services/AccountService.js";
 import Screen from "./Screen.js";
 
 export default class LoginScreen extends Screen {
@@ -12,15 +12,22 @@ export default class LoginScreen extends Screen {
   handleLoginFormSubmit = (e) => {
     e.preventDefault();
     const entries = Object.fromEntries(new FormData(e.target));
-    const account = new AccountService().read(
-      (item) => item.email == entries.email
-    );
-    console.log(account);
+    const existingAccounts = JSON.parse(localStorage.getItem("accounts")) || [];
+    const emailExists = existingAccounts.some(account => account.email === entries.email);
+    const passwordExists = existingAccounts.some(account => account.password === entries.LoginPassword);
+    if (emailExists && passwordExists) {
+      alert("Connecté !");
+      console.log(passwordExists);
+      return;
+    } else {
+      alert("Mdp ou mail incorrect");
+      return;
+    }
   };
 
   handleRegisterFormSubmit = (e) => {
     e.preventDefault();
-    const entries = Object.fromEntries(new FormData(e.target));
+    const entries = Object.fromEntries(new FormData(e.target)); 
     const password = entries["password"];
     const regex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{6,15}$/;
     if (!regex.test(password)) {
@@ -30,7 +37,8 @@ export default class LoginScreen extends Screen {
       return;
     }
     const existingAccounts = JSON.parse(localStorage.getItem("accounts")) || [];
-    if (existingAccounts.some((account) => account.email === entries.email)) {
+    const emailExists = existingAccounts.some(account => account.email === entries.email);
+    if (emailExists) {
       alert("L'adresse mail existe déjà !");
       return;
     }
