@@ -11,13 +11,29 @@ export default class BookingScreen extends Screen {
   handleBookingFormSubmit = (e) => {
     e.preventDefault();
     const entries = Object.fromEntries(new FormData(e.target));
+    const existingAccounts = JSON.parse(localStorage.getItem("accounts")) || [];
     const existingBooking = JSON.parse(localStorage.getItem("books")) || [];
-    if (
-      existingBooking.some((books) => books.email === entries.email) &&
-      existingBooking.some((books) => books.names === entries.name) &&
-      existingBooking.some((books) => books.date === entries.date)
-    ) {
+    const bookingEmailExists = existingBooking.some(
+      (books) => books.email === entries.email
+    );
+    const bookingNameExists = existingBooking.some(
+      (books) => books.names === entries.names
+    );
+    const bookingDateExists = existingBooking.some(
+      (books) => books.date === entries.date
+    );
+    if (bookingEmailExists && bookingNameExists && bookingDateExists) {
       alert("Vous avez déjà reservé !");
+      return;
+    }
+    const nameExists = existingAccounts.some(
+      (account) => account.name === entries.names
+    );
+    const emailExists = existingAccounts.some(
+      (account) => account.email === entries.email
+    );
+    if (!nameExists || !emailExists) {
+      alert("Le compte ne correspond pas a la bdd !");
       return;
     }
     const newBookingService = new BookingService();

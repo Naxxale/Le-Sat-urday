@@ -12,10 +12,20 @@ export default class LoginScreen extends Screen {
   handleLoginFormSubmit = (e) => {
     e.preventDefault();
     const entries = Object.fromEntries(new FormData(e.target));
-    const account = new AccountService().read(
-      (item) => item.email == entries.email
+    const existingAccounts = JSON.parse(localStorage.getItem("accounts")) || [];
+    const emailExists = existingAccounts.some(
+      (account) => account.email === entries.email
     );
-    console.log(account);
+    const passwordExists = existingAccounts.some(
+      (account) => account.password === entries.LoginPassword
+    );
+    if (emailExists && passwordExists) {
+      alert("Connecté !");
+      return;
+    } else {
+      alert("Mdp ou mail incorrect");
+      return;
+    }
   };
 
   handleRegisterFormSubmit = (e) => {
@@ -30,7 +40,10 @@ export default class LoginScreen extends Screen {
       return;
     }
     const existingAccounts = JSON.parse(localStorage.getItem("accounts")) || [];
-    if (existingAccounts.some((account) => account.email === entries.email)) {
+    const emailExists = existingAccounts.some(
+      (account) => account.email === entries.email
+    );
+    if (emailExists) {
       alert("L'adresse mail existe déjà !");
       return;
     }
@@ -65,7 +78,7 @@ export default class LoginScreen extends Screen {
                   <div class="flip-card__back">
                      <div class="title">S'enregistrer</div>
                      <form class="flip-card__form" action="" id="form-signIn">
-                        <input class="flip-card__input" placeholder="Nom" name="names" type="name">
+                        <input class="flip-card__input" placeholder="Nom" name="name" type="name">
                         <input class="flip-card__input" name="email" placeholder="Email" type="email">
                         <input class="flip-card__input" name="password" placeholder="Mot de passe" minlength="6" maxlength="15" type="password">
                         <button class="flip-card__btn">A Table !</button>

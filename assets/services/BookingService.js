@@ -23,7 +23,7 @@ export default class BookingService{
         //recupérer les acccounts stockés dans le tableau data qui correspondent au filter
     };
 
-    updtate(instance){
+    update(instance){
         //.value + setItem
 
     };

@@ -24,7 +24,7 @@ export default class AccountService{
         filter = (item) => item.id == Account.id; //(exemple)
     }
 
-    updtate(instance){
+    update(instance){
         //.value + setItem
 
     }

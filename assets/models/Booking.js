@@ -1,4 +1,3 @@
-
 export default class Booking{
 
     static #_nextId = 0;
