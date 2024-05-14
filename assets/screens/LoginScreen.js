@@ -1,4 +1,3 @@
-import Account from "../models/Account.js";
 import AccountService from "../services/AccountService.js";
 import Screen from "./Screen.js";
 
@@ -12,18 +11,21 @@ export default class LoginScreen extends Screen {
   handleLoginFormSubmit = (e) => {
     e.preventDefault();
     const entries = Object.fromEntries(new FormData(e.target));
-    const existingAccounts = JSON.parse(localStorage.getItem("accounts")) || [];
-    const emailExists = existingAccounts.some(
+    const accountService = new AccountService();
+    const accounts = accountService.read(
       (account) => account.email === entries.email
     );
-    const passwordExists = existingAccounts.some(
-      (account) => account.password === entries.LoginPassword
-    );
-    if (emailExists && passwordExists) {
+
+    if (accounts.length === 0) {
+      alert("Aucun compte existant ou mail incorrect");
+      return;
+    }
+    const currentUser = accounts.pop();
+    if (currentUser.password === entries.LoginPassword) {
       alert("Connecté !");
       return;
     } else {
-      alert("Mdp ou mail incorrect");
+      alert("Mdp incorrect");
       return;
     }
   };
@@ -39,11 +41,12 @@ export default class LoginScreen extends Screen {
       );
       return;
     }
-    const existingAccounts = JSON.parse(localStorage.getItem("accounts")) || [];
-    const emailExists = existingAccounts.some(
+    const createAccount = new AccountService();
+    const newAccounts = createAccount.read(
       (account) => account.email === entries.email
     );
-    if (emailExists) {
+    const userAccounts = newAccounts.pop();
+    if (userAccounts) {
       alert("L'adresse mail existe déjà !");
       return;
     }
