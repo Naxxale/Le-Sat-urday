@@ -1,5 +1,5 @@
 import Screen from "./Screen.js";
-import BookingService from "../services/BookingServices.js";
+import BookingService from "../services/BookingService.js";
 
 export default class BookingScreen extends Screen {
   constructor() {
@@ -14,9 +14,10 @@ export default class BookingScreen extends Screen {
     const existingBooking = JSON.parse(localStorage.getItem("books")) || [];
     if (
       existingBooking.some((books) => books.email === entries.email) &&
-      existingBooking.some((books) => books.names === entries.name)
+      existingBooking.some((books) => books.names === entries.name) &&
+      existingBooking.some((books) => books.date === entries.date)
     ) {
-      alert("Vous avez déjà reservé!");
+      alert("Vous avez déjà reservé !");
       return;
     }
     const newBookingService = new BookingService();

@@ -11,7 +11,7 @@ export default class BookingService{
 
 
 //Methode CRUD
-    
+
     create(instance){
         //setItem
         this.data.push(new Booking(instance));
@@ -33,5 +33,4 @@ export default class BookingService{
         //removeItem
 
     };
-   
 }
