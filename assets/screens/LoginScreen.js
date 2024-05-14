@@ -1,5 +1,5 @@
 import Account from "../models/Account.js";
-import AccountService from "../services/AccountServices.js";
+import AccountService from "../services/AccountService.js";
 import Screen from "./Screen.js";
 
 export default class LoginScreen extends Screen {
