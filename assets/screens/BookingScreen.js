@@ -1,5 +1,6 @@
 import Screen from "./Screen.js";
 import BookingService from "../services/BookingService.js";
+import AccountService from "../services/AccountService.js";
 
 export default class BookingScreen extends Screen {
   constructor() {
@@ -11,20 +12,18 @@ export default class BookingScreen extends Screen {
   handleBookingFormSubmit = (e) => {
     e.preventDefault();
     const entries = Object.fromEntries(new FormData(e.target));
-    const existingAccounts = JSON.parse(localStorage.getItem('accounts')) || [];
-    const existingBooking = JSON.parse(localStorage.getItem("books")) || [];
-    const bookingEmailExist = existingBooking.some((books) => books.email === entries.email);
-    const bookingNameExist = existingBooking.some((books) => books.names === entries.names);
-    const bookingDateExist = existingBooking.some((books) => books.date === entries.date);
-    if (bookingEmailExist && bookingNameExist && bookingDateExist) {
+    const bookingService = new BookingService();
+    const accountService = new AccountService();
+    const booking = bookingService.read(books => books.email === entries.email);
+    const account = accountService.read(account => account.email === entries.email);
+    const userBooking = booking.pop();
+    const currentUser = account.pop();
+    if (userBooking && userBooking.names == entries.names && userBooking.date == entries.date) {
       alert("Vous avez déjà reservé!");
       return;
     }
-    
-    const nameExists = existingAccounts.some(account => account.name === entries.names);
-    const emailExists = existingAccounts.some(account => account.email === entries.email);
-    if(!nameExists || !emailExists){
-      alert("Le compte n'existe pas.")
+    if(!currentUser || !currentUser.email || (currentUser && currentUser.name != entries.names)){
+      alert("Le compte n'existe pas.");
       return;
     }
     const newBookingService = new BookingService();

@@ -19,10 +19,7 @@ export default class AccountService{
     }
 
     read(filter){
-        
-        //getItem
-        //recupérer les acccounts stockés dans le tableau data qui correspondent au filter
-        filter = (item) => item.id == Account.id; //(exemple)
+        return this.data.filter(filter);
     }
 
     updtate(instance){
