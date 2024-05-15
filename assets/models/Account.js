@@ -1,5 +1,5 @@
     export default class Account {
-        
+
         static #_nextId = 0;
     constructor(props) {
         const {id, name, email, password} = props;
