@@ -12,23 +12,35 @@ export default class BookingScreen extends Screen {
   handleBookingFormSubmit = (e) => {
     e.preventDefault();
     const entries = Object.fromEntries(new FormData(e.target));
-    const bookingService = new BookingService();
     const accountService = new AccountService();
-    const booking = bookingService.read(books => books.email === entries.email);
-    const account = accountService.read(account => account.email === entries.email);
+    const accounts = accountService.read(
+      (account) => account.email === entries.email
+    );
+    const currentUser = accounts.pop();
+    const bookingService = new BookingService();
+    const booking = bookingService.read(
+      (books) => books.email === entries.email
+    );
     const userBooking = booking.pop();
-    const currentUser = account.pop();
-    if (userBooking && userBooking.names == entries.names && userBooking.date == entries.date) {
-      alert("Vous avez déjà reservé!");
+    console.log(userBooking);
+
+    if (
+      userBooking &&
+      userBooking.names == entries.names &&
+      userBooking.date == entries.date
+    ) {
+      alert("Vous avez déjà reservé !");
       return;
     }
-    if(!currentUser || !currentUser.email || (currentUser && currentUser.name != entries.names)){
-      alert("Le compte n'existe pas.");
+    if (
+      !currentUser ||
+      currentUser.name != entries.names
+    ) {
+      alert("Le compte n'existe pas!");
       return;
     }
-    const newBookingService = new BookingService();
-    newBookingService.create(entries);
-    console.log(newBookingService);
+    bookingService.create(entries);
+    console.log(bookingService);
   };
 
   render() {

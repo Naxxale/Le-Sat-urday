@@ -22,7 +22,7 @@ export default class AccountService{
         return this.data.filter(filter);
     }
 
-    updtate(instance){
+    update(instance){
         //.value + setItem
 
     }

@@ -1,5 +1,3 @@
-import Account from "./Account.js";
-
 export default class Booking{
 
     static #_nextId = 0;

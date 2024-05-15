@@ -12,20 +12,27 @@ export default class LoginScreen extends Screen {
     e.preventDefault();
     const entries = Object.fromEntries(new FormData(e.target));
     const accountService = new AccountService();
-    const account = accountService.read(account => account.email === entries.email);
-    const currentUser = account.pop();
-    if (currentUser && currentUser.password == entries.LoginPassword){
+    const accounts = accountService.read(
+      (account) => account.email === entries.email
+    );
+
+    if (accounts.length === 0) {
+      alert("Aucun compte existant ou mail incorrect");
+      return;
+    }
+    const currentUser = accounts.pop();
+    if (currentUser.password === entries.LoginPassword) {
       alert("Connecté !");
       return;
     } else {
-      alert("Mdp ou mail incorrect");
+      alert("Mdp incorrect");
       return;
     }
   };
 
   handleRegisterFormSubmit = (e) => {
     e.preventDefault();
-    const entries = Object.fromEntries(new FormData(e.target)); 
+    const entries = Object.fromEntries(new FormData(e.target));
     const password = entries["password"];
     const regex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{6,15}$/;
     if (!regex.test(password)) {
@@ -35,7 +42,9 @@ export default class LoginScreen extends Screen {
       return;
     }
     const createAccount = new AccountService();
-    const newAccounts = createAccount.read(account => account.email === entries.email);
+    const newAccounts = createAccount.read(
+      (account) => account.email === entries.email
+    );
     const userAccounts = newAccounts.pop();
     if (userAccounts) {
       alert("L'adresse mail existe déjà !");

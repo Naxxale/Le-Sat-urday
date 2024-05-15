@@ -22,7 +22,7 @@ export default class BookingService{
         return this.data.filter(filter);
     };
 
-    updtate(instance){
+    update(instance){
         //.value + setItem
 
     };
