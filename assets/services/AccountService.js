@@ -1,12 +1,11 @@
+import Service from "../classes/Service.js";
 import Account from "../models/Account.js";
 
-export default class AccountService{
-    data = [];
-
+export default class AccountService extends Service{
     constructor(){
+        super();
         if(localStorage.getItem('accounts')){
             this.data = JSON.parse(localStorage.getItem('accounts')).map(json => new Account(json));
-            //map = prend toutes les lignes du tableau et les transforme en objet de type account
         }
     }
     //Methode CRUD
@@ -14,20 +13,5 @@ export default class AccountService{
         //setItem
         this.data.push(new Account(instance));
         localStorage.setItem('accounts', JSON.stringify(this.data));
-    }
-
-    read(filter){
-        return this.data.filter(filter);
-    }
-
-    update(instance){
-        //.value + setItem
-
-    }
-
-
-    delete(instance, hard = false){
-        //removeItem
-
     }
 }

@@ -6,7 +6,9 @@ export default class Service {
     
     create(instance){}
 
-    read(filter){}
+    read(filter){
+        return this.data.filter(filter);
+    }
 
     update(){}
 
