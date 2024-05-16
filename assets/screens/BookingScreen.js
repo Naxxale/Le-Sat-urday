@@ -23,22 +23,31 @@ export default class BookingScreen extends Screen {
     );
     const userBooking = booking.pop();
     console.log(userBooking);
-
     if (
       userBooking &&
       userBooking.names == entries.names &&
       userBooking.date == entries.date
     ) {
-      alert("Vous avez déjà reservé !");
+      const doubleBook = document.getElementById("resultBook");
+      doubleBook.textContent = "Vous avez déjà reservé !";
+      setTimeout(function () {
+        doubleBook.textContent = "";
+      }, 2000);
       return;
     }
-    if (
-      !currentUser ||
-      currentUser.name != entries.names
-    ) {
-      alert("Le compte n'existe pas!");
+    if (!currentUser || currentUser.name != entries.names) {
+      const noAccount = document.getElementById("resultBook");
+      noAccount.textContent = "Le compte n'existe pas !";
+      setTimeout(function () {
+        noAccount.textContent = "";
+      }, 2000);
       return;
     }
+    const divResult = document.getElementById("resultBook");
+    divResult.textContent = "Reservation confirmé !";
+    setTimeout(function () {
+      divResult.textContent = "";
+    }, 3000);
     bookingService.create(entries);
     console.log(bookingService);
   };
@@ -87,6 +96,7 @@ export default class BookingScreen extends Screen {
                     <option value="3">9</option>
                     <option value="3">10</option>
                 </select>
+                <div id="resultBook" class="text-center mt-3"></div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-ternary mt-5  mb-3 ">Réserver</button>
                 </div>

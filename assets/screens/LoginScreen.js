@@ -9,20 +9,9 @@ export default class LoginScreen extends Screen {
     this.querySelector("form").onsubmit = this.handleLoginFormSubmit;
   }
 
-  clearErrorMessage = () => {
-    const errorContainers = document.querySelectorAll(
-      "#createAccount, #wrongPassword, #passwordRegister, #mailRegister"
-    );
-    errorContainers.forEach((container) => {
-      while (container.firstChild) {
-        container.removeChild(container.firstChild);
-      }
-    });
-  };
-
   handleLoginFormSubmit = (e) => {
     e.preventDefault();
-    this.clearErrorMessage();
+    // this.clearErrorMessage();
     const entries = Object.fromEntries(new FormData(e.target));
     const accountService = new AccountService();
     const accounts = accountService.read(
@@ -30,21 +19,25 @@ export default class LoginScreen extends Screen {
     );
 
     if (accounts.length === 0) {
-      const newSpanText = document.createTextNode(
-        "Aucun compte existant ou mail incorrect"
-      );
-      document.getElementById("createAccount").appendChild(newSpanText);
+      const noExistingUser = document.getElementById("createAccount");
+      noExistingUser.textContent = "Compte inexistant !";
+      setTimeout(function () {
+        noExistingUser.textContent = "";
+      }, 2000);
       return;
     }
     const currentUser = accounts.pop();
     if (currentUser.password === entries.LoginPassword) {
-      alert('Connecté !');
+      alert("Connecté !");
       history.pushState(null, null, "/");
       App.instance.router.navigate();
       return;
     } else {
-      const newSpanText = document.createTextNode("Mot de passe incorrect !");
-      document.getElementById("wrongPassword").appendChild(newSpanText);
+      const wrongPassword = document.getElementById("wrongPassword");
+      wrongPassword.textContent = "Mot de passe incorrect !";
+      setTimeout(function () {
+        wrongPassword.textContent = "";
+      }, 2000);
       return;
     }
   };
@@ -56,11 +49,12 @@ export default class LoginScreen extends Screen {
     const password = entries["password"];
     const regex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{6,15}$/;
     if (!regex.test(password)) {
-      const errorPassword = document.createTextNode(
-        "Attention mot de passe invalide, veuillez saisir un mot de passe fort"
-      );
-      document.getElementById("passwordRegister").appendChild(errorPassword);
-
+      const errorPassword = document.getElementById("passwordRegister");
+      errorPassword.textContent =
+        "Attention mot de passe invalide, veuillez saisir un mot de passe fort !";
+      setTimeout(function () {
+        errorPassword.textContent = "";
+      }, 3000);
       return;
     }
     const createAccount = new AccountService();
@@ -69,8 +63,11 @@ export default class LoginScreen extends Screen {
     );
     const userAccounts = newAccounts.pop();
     if (userAccounts) {
-      const errorMail = document.createTextNode("L'adresse mail existe déjà !");
-      document.getElementById("mailRegister").appendChild(errorMail);
+      const errorMail = document.getElementById("mailRegister");
+      errorMail.textContent = "L'adresse mail existe déjà !";
+      setTimeout(function () {
+        errorMail.textContent = "";
+      }, 2000);
       return;
     }
     const newAccountService = new AccountService();
