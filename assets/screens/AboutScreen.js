@@ -11,10 +11,8 @@ export default class AboutScreen extends Screen {
     <div class="container-fluid">
     <h1 class="display-3 fw-bold mb-3 text-center">A propos de nous !</h1>
     <p class="lead mb-0 text-center">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque eius
-      quis sapiente aperiam! Quas ducimus quaerat aut! Sed libero
-      consequatur similique impedit commodi aliquam! Omnis quisquam fuga
-      accusamus amet aliquid.
+    Bienvenue au Sat'Urday, un restaurant de tapas né de l'amitié et de la passion partagée pour les jeux vidéo et la bonne cuisine. 
+    Créé il y a cinq ans par une bande de gamers gourmands, notre établissement incarne la convivialité, l'accessibilité et l'humour.
     </p>
   </div>
   <div class="container">
@@ -100,21 +98,15 @@ export default class AboutScreen extends Screen {
         <div class="text-center">
           <h2 class="fw-bold mb-3 mt-3">Ce qu'on fait</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Doloremque officiis amet et, deleniti error, eum nulla maxime
-            nobis numquam consequatur quo in vitae quia architecto
-            repudiandae cumque, molestias ea sequi! Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Officiis, laboriosam minus
-            beatae deserunt debitis amet tempore voluptas perferendis
-            nesciunt sapiente. Doloremque iure ipsam consectetur asperiores
-            commodi quis natus repellat saepe. Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Voluptate hic ipsam est sequi, quo
-            cumque itaque enim exercitationem nam rerum dolorum officia
-            sint. Quas eius quae consequatur, voluptatum aut nulla. Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-            porro fugit. Perspiciatis laborum, iste reiciendis facilis qui
-            veniam enim iusto necessitatibus rem cumque voluptate maxime
-            minima impedit officia, sunt neque?
+          Le Sat'Urday a vu le jour il y a cinq ans, grâce à l'initiative de trois amis inséparables : 
+          Solen, Antoine et Théo. Unis par leur passion commune pour les pains au chocolat et leur amour de la bonne nourriture, 
+          ils ont décidé de créer un lieu où ces deux univers se rencontrent. Ainsi est né notre restaurant de tapas, 
+          un endroit où convivialité et plaisir sont au rendez-vous, et où la chocolatine n'existe pas.<br>
+          Au Sat'Urday, nous croyons que la bonne cuisine doit être accessible à tous et se savourer dans la bonne humeur.<br>
+          Nous avons créé un environnement chaleureux et accueillant où chacun se sent comme à la maison.
+          Nos tapas sont conçus pour être partagés et appréciés par tous, quel que soit leur budget.<br>
+          La vie est trop courte pour être prise trop au sérieux : chez nous, le rire, la bonne humeur, et les pains au chocolat sont toujours au menu.<br>
+          Alors venez partager un moment unique avec nous et découvrez pourquoi le Sat'Urday est bien plus qu'un simple restaurant de tapas !
           </p>
         </div>
       </div>
@@ -133,8 +125,9 @@ export default class AboutScreen extends Screen {
           <div class="card-body">
             <h5 class="card-title text-center">Solen a la cantine</h5>
             <p class="card-text">
-              Some quick example text to build on the card title and make up
-              the bulk of the card's content.
+            Notre gourmande en chef, Solenix la gauloise adore manger.
+            Son endroit préféré dans la maison est la cuisine. 
+            Sa joie de vivre et sa passion pour la cuisine se reflètent dans chaque plat que nous servons.
             </p>
           </div>
         </div>
@@ -149,8 +142,9 @@ export default class AboutScreen extends Screen {
           <div class="card-body">
             <h5 class="card-title text-center">Théotudors?</h5>
             <p class="card-text">
-              Some quick example text to build on the card title and make up
-              the bulk of the card's content.
+            Gamer professionnel, Théo possède un sens aigu du goût et du détail. 
+            Son expertise et son amour des jeux se traduisent par une expérience culinaire unique et ludique.
+            Rassurez-vous, Théotudors ne dort pas vraiment.
             </p>
           </div>
         </div>
@@ -165,8 +159,9 @@ export default class AboutScreen extends Screen {
           <div class="card-body">
             <h5 class="card-title text-center">Antoine C le troll</h5>
             <p class="card-text">
-              Some quick example text to build on the card title and make up
-              the bulk of the card's content.
+            Le maestro de la cuisine, Antoine est reconnu pour ses talents culinaires. 
+            Il est célèbre pour posséder la plus belle caravane de Stardew Valley !
+            Ses créations gastronomiques sont un véritable régal pour les papilles.
             </p>
           </div>
         </div>

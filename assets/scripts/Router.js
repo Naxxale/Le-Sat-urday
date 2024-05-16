@@ -7,6 +7,7 @@ import NotfoundScreen from "../screens/NotfoundScreen.js";
 import SamediScreen from "../screens/SamediScreen.js";
 import App from "./App.js";
 
+
 export default class Router {
   #screen = null;
   get screen() {
@@ -27,7 +28,7 @@ export default class Router {
     }
   };
 
-  navigate = (e) => {
+  navigate = () => {
     if (location.pathname == "/" || location.pathname == "/index") {
       this.#screen = new HomeScreen();
     } else if (location.pathname == "/login") {
