@@ -9,9 +9,7 @@ export default class AccountService{
             //map = prend toutes les lignes du tableau et les transforme en objet de type account
         }
     }
-
     //Methode CRUD
-
     create(instance){
         //setItem
         this.data.push(new Account(instance));
